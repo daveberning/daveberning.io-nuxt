@@ -3,7 +3,7 @@
     <div class="wrapper">
       <div class="content">
         <picture>
-          <source srcset="images/dave-md-g.png" media="(min-width: 1025px)">
+          <source srcset="images/dave-optimized.png" media="(min-width: 1025px)">
           <img src="images/dave-mobile.jpg" alt="PP">
         </picture>
         <!--        <img src="images/dave-md-g.png" alt="">-->
@@ -68,6 +68,7 @@
   .component {
     position: fixed;
     top: 0 !important;
+    transform: translateY(0) !important;
   }
 
   h1 {
