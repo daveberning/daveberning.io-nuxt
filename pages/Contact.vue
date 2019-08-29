@@ -2,7 +2,8 @@
   <Modal>
     <h1>Contact</h1>
     <div class="grid">
-      <form method="post" name="contact" netlify data-netlify-honeypot="bot-field" @submit.prevent="handleSubmit">
+      <form method="post" name="contact" netlify data-netlify-honeypot="bot-field" @submit.prevent="handleSubmit"
+            v-if="formSubmitted === false">
         <section v-for="field in fields" :key="field.id">
           <label :for="field.id">{{ field.label }}</label>
           <input :type="field.type" :id="field.id" :name="field.name" @input="ev => form[`${field.name}`] =
@@ -14,6 +15,16 @@
         </section>
         <button type="submit">Send</button>
       </form>
+      <div class="message" v-else>
+        <div>
+          <h2>Thanks for the message, {{ form.firstName }}!</h2>
+          <p>We will be in touch shortly. In the mean time, please
+            <nuxt-link to="/writing">read some of my writing</nuxt-link>
+            or
+            <nuxt-link to="/work">take a look at some of my work.</nuxt-link>
+          </p>
+        </div>
+      </div>
       <ul>
         <li v-for="media in socialMedia" :key="media.icon">
           <a :href="media.href">
@@ -30,7 +41,7 @@
   import axios from 'axios'
   import Modal from '@/components/Modal.vue'
   import {socialMedia} from '@/data/social-media'
-  import {FormField, SocialMedia} from '@/types'
+  import {FormField, FormModels, SocialMedia} from '~/types'
 
   export default Vue.extend({
     name: 'Contact' as string,
@@ -51,7 +62,8 @@
           lastName: '',
           email: '',
           phone: ''
-        }
+        } as FormModels,
+        formSubmitted: false as boolean
       }
     },
     methods: {
@@ -62,10 +74,10 @@
         const axiosConfig: any = {
           header: {'Content-Type': 'application/x-www-form-urlencoded'}
         }
-        axios.post('/', this.encode({
-          'form-name': 'contact',
-          ...this.form
-        }), axiosConfig)
+        axios.post('/', this.encode({'form-name': 'contact', ...this.form}), axiosConfig)
+          .then(() => {
+            this.formSubmitted = true
+          })
       }
     }
   })
@@ -131,7 +143,8 @@
     }
   }
 
-  form {
+  form,
+  .message {
     grid-column: span 2;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -171,6 +184,16 @@
       @media screen and (min-width: 1024px) {
         grid-column: span 2;
       }
+    }
+  }
+
+  .message {
+    h2 {
+      margin-bottom: 2rem;
+    }
+
+    & > div {
+      grid-column: span 4;
     }
   }
 
