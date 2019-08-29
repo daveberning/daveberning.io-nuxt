@@ -2,16 +2,16 @@
   <Modal>
     <h1>Contact</h1>
     <div class="grid">
-      <form action="">
+      <form method="post" name="contact" netlify>
         <section v-for="field in fields" :key="field.id">
           <label :for="field.id">{{ field.label }}</label>
-          <input :type="field.type" :id="field.id">
+          <input :type="field.type" :id="field.id" :name="field.name">
         </section>
         <section>
           <label for="message">Message</label>
-          <textarea id="message" rows="5"></textarea>
+          <textarea id="message" rows="5" name="message"></textarea>
         </section>
-        <button>Send</button>
+        <button type="submit">Send</button>
       </form>
       <ul>
         <li v-for="media in socialMedia" :key="media.icon">
@@ -39,10 +39,10 @@
       return {
         socialMedia: socialMedia as SocialMedia[],
         fields: [
-          {id: 'firstName', type: 'text', label: 'First Name'},
-          {id: 'lastName', type: 'text', label: 'Last Name'},
-          {id: 'phone', type: 'tel', label: 'Phone Number'},
-          {id: 'email', type: 'email', label: 'Email Address'}
+          {id: 'firstName', type: 'text', label: 'First Name', name: 'first-name'},
+          {id: 'lastName', type: 'text', label: 'Last Name', name: 'last-name'},
+          {id: 'phone', type: 'tel', label: 'Phone Number', name: 'email'},
+          {id: 'email', type: 'email', label: 'Email Address', name: '_replyto'}
         ] as FormField[]
       }
     }
@@ -89,10 +89,6 @@
 
       i {
         font-size: 4.5rem;
-
-        @media screen and (min-width: 1024px) {
-          font-size: 3.5rem;
-        }
       }
     }
 

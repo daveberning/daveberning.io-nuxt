@@ -1,5 +1,5 @@
-import {Vue} from 'vue/types/vue';
-import {VueRouter} from 'vue-router/types/router';
+import {Vue} from 'vue/types/vue'
+import {VueRouter} from 'vue-router/types/router'
 
 export interface VueInstance extends Vue {
   $router: VueRouter;
@@ -33,6 +33,7 @@ export interface FormField {
   id: string;
   type: string;
   label: string;
+  name?: string;
 }
 
 export interface SocialMedia {
