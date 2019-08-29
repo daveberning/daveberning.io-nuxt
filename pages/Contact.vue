@@ -2,10 +2,11 @@
   <Modal>
     <h1>Contact</h1>
     <div class="grid">
-      <form method="post" name="contact" netlify>
+      <form method="post" name="contact" netlify data-netlify-honeypot="bot-field" @submit.prevent="handleSubmit">
         <section v-for="field in fields" :key="field.id">
           <label :for="field.id">{{ field.label }}</label>
-          <input :type="field.type" :id="field.id" :name="field.name">
+          <input :type="field.type" :id="field.id" :name="field.name" @input="ev => form[`${field.name}`] =
+          ev.target.value">
         </section>
         <section>
           <label for="message">Message</label>
@@ -26,6 +27,7 @@
 
 <script lang="ts">
   import Vue from 'vue'
+  import axios from 'axios'
   import Modal from '@/components/Modal.vue'
   import {socialMedia} from '@/data/social-media'
   import {FormField, SocialMedia} from '@/types'
@@ -43,7 +45,27 @@
           {id: 'lastName', type: 'text', label: 'Last Name', name: 'lastName'},
           {id: 'phone', type: 'tel', label: 'Phone Number', name: 'phone'},
           {id: 'email', type: 'email', label: 'Email Address', name: 'email'}
-        ] as FormField[]
+        ] as FormField[],
+        form: {
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: ''
+        }
+      }
+    },
+    methods: {
+      encode(data: any) {
+        return Object.keys(data).map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`).join('&')
+      },
+      handleSubmit() {
+        const axiosConfig: any = {
+          header: {'Content-Type': 'application/x-www-form-urlencoded'}
+        }
+        axios.post('/', this.encode({
+          'form-name': 'contact',
+          ...this.form
+        }), axiosConfig)
       }
     }
   })
