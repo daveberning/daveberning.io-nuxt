@@ -2,7 +2,8 @@
   <Modal>
     <h1>Contact</h1>
     <div class="grid">
-      <form method="post" name="contact" netlify data-netlify-honeypot="bot-field" @submit.prevent="handleSubmit"
+      <form action="/contact" method="post" name="contact" netlify data-netlify-honeypot="bot-field"
+            @submit.prevent="handleSubmit"
             v-if="formSubmitted === false">
         <section v-for="field in fields" :key="field.id">
           <label :for="field.id">{{ field.label }}</label>
