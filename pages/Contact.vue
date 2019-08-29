@@ -41,8 +41,8 @@
         fields: [
           {id: 'firstName', type: 'text', label: 'First Name', name: 'firstName'},
           {id: 'lastName', type: 'text', label: 'Last Name', name: 'lastName'},
-          {id: 'phone', type: 'tel', label: 'Phone Number', name: 'email'},
-          {id: 'email', type: 'email', label: 'Email Address', name: '_replyto'}
+          {id: 'phone', type: 'tel', label: 'Phone Number', name: 'phone'},
+          {id: 'email', type: 'email', label: 'Email Address', name: 'email'}
         ] as FormField[]
       }
     }

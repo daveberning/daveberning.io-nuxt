@@ -1,7 +1,7 @@
 <template>
   <div class="modal" :class="{ active: isActive }">
     <div class="content">
-      <router-link to="/" class="close"><img src="images/cancel.svg" alt=""></router-link>
+      <router-link to="/" class="close"><img src="/images/cancel.svg" alt=""></router-link>
       <slot />
     </div>
     <p class="right">Copyright &copy 2012 - {{ new Date().getFullYear() }}. All Rights Reserved.</p>
@@ -9,32 +9,32 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import {VueInstance} from '@/types';
+  import Vue from 'vue'
+  import {VueInstance} from '@/types'
 
-export default Vue.extend({
-  name: 'Modal' as string,
-  data() {
-    return {
-      isActive: true as boolean,
-      bodyClass: 'modal-background' as string,
-    };
-  },
-  destroyed(): void {
-    this.isActive = false;
-    document.body.classList.remove(this.bodyClass);
-  },
-  mounted(): void {
-    this.isActive = true;
-    const self: VueInstance = this;
-    window.addEventListener('keyup', (e: KeyboardEvent) => {
-      if (e.keyCode === 27) {
-        self.$router.push('/');
-      } // Esc
-    });
-    document.body.classList.add(this.bodyClass);
-  },
-});
+  export default Vue.extend({
+    name: 'Modal' as string,
+    data() {
+      return {
+        isActive: true as boolean,
+        bodyClass: 'modal-background' as string
+      }
+    },
+    destroyed(): void {
+      this.isActive = false
+      document.body.classList.remove(this.bodyClass)
+    },
+    mounted(): void {
+      this.isActive = true
+      const self: VueInstance = this
+      window.addEventListener('keyup', (e: KeyboardEvent) => {
+        if (e.keyCode === 27) {
+          self.$router.push('/')
+        } // Esc
+      })
+      document.body.classList.add(this.bodyClass)
+    }
+  })
 </script>
 
 <style lang="scss">
