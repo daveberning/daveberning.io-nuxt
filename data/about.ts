@@ -13,8 +13,8 @@ export const about: About = {
   role: 'Developer & Author',
   city: 'Cincinnati',
   state: 'Ohio',
-  almaMaterLogo: `images/university-of-cincinnati-vector-logo.svg`,
-  companyLogo: `images/oodle-logo.svg`,
+  almaMaterLogo: `/images/university-of-cincinnati-vector-logo.svg`,
+  companyLogo: `/images/oodle-logo.svg`,
   twitterHandle: `@daveberning`,
   bio: `<p>Dave Berning has been a front-end web developer for more than ${years()} years. He graduated from the
 University of Cincinnati where he learned to create interactive websites with HTML, CSS, and JavaScript. Dave
