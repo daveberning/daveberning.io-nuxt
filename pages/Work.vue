@@ -3,7 +3,9 @@
     <h1>Work</h1>
     <div class="grid">
       <section v-for="work in works" :key="work.name">
-        <img :src="work.icon" alt="">
+        <a :href="work.link">
+          <img :src="work.icon" alt="">
+        </a>
       </section>
     </div>
   </Modal>
@@ -50,7 +52,7 @@
     section {
       grid-column: span 1;
       background: darken(#3e9e91, 7%);
-      padding: 2.5rem 2rem;
+      padding: 5rem 2rem;
       border-radius: 4px;
       display: flex;
 
@@ -63,8 +65,14 @@
         text-align: center;
       }
 
+      a {
+        width: 70%;
+        display: flex;
+        margin: 0 auto;
+      }
+
       img {
-        width: 60%;
+        width: 100%;
         height: auto;
         display: block;
         margin: 0 auto;

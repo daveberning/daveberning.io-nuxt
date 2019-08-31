@@ -1,10 +1,8 @@
-import {SocialMedia} from '@/types';
+import {SocialMedia} from '@/types'
 
 export const socialMedia: SocialMedia[] = [
-  {icon: 'twitter', href: ''},
-  {icon: 'github', href: ''},
-  {icon: 'linkedin-in', href: ''},
-  {icon: 'instagram', href: ''},
-  {icon: 'codepen', href: ''},
-  {icon: 'dev', href: ''},
-];
+  {icon: 'twitter', href: 'https://twitter.com/daveberning'},
+  {icon: 'linkedin-in', href: 'https://www.linkedin.com/in/davidberning/'},
+  {icon: 'instagram', href: 'https://www.instagram.com/daveberning/'},
+  {icon: 'github', href: 'https://github.com/daveberning/'}
+]

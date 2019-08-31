@@ -1,29 +1,19 @@
-import {Work} from '@/types';
+import {Work} from '@/types'
 
 export const works: Work[] = [
   {
     name: `Drees Homes`,
     icon: `images/drees-logo.svg`,
-    to: ``,
+    link: 'http://bearcastmedia.com/'
   },
   {
-    name: `University of Cincinnati`,
-    icon: `images/university-of-cincinnati-vector-logo.svg`,
-    to: ``,
+    name: `M80`,
+    icon: `images/m80-logo.svg`,
+    link: `http://m80inc.com/`
   },
   {
-    name: `Oodle`,
-    icon: `images/oodle-logo.svg`,
-    to: ``,
-  },
-  {
-    name: `Kroger Wireless`,
-    icon: `images/university-of-cincinnati-vector-logo.svg`,
-    to: ``,
-  },
-  {
-    name: `Bearcast Media`,
-    icon: `images/university-of-cincinnati-vector-logo.svg`,
-    to: ``,
-  },
-];
+    name: `IDD`,
+    icon: `images/idd-logo.png`,
+    link: `http://permitsmadepossible.com/`
+  }
+]

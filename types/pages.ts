@@ -13,7 +13,7 @@ export interface About {
 export interface Work {
   name: string;
   icon: string;
-  to: string;
+  link: string;
 }
 
 export interface Writing {

@@ -123,7 +123,7 @@
       }
 
       i {
-        font-size: 4.5rem;
+        font-size: 6rem;
       }
     }
 
