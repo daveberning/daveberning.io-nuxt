@@ -12,7 +12,8 @@
         </section>
         <section>
           <label for="message">Message</label>
-          <textarea id="message" rows="5" name="message"></textarea>
+          <textarea id="message" rows="5" name="message" @input="ev => form[`message`] =
+          ev.target.value"></textarea>
         </section>
         <button type="submit">Send</button>
       </form>
@@ -62,7 +63,8 @@
           firstName: '',
           lastName: '',
           email: '',
-          phone: ''
+          phone: '',
+          message: ''
         } as FormModels,
         formSubmitted: false as boolean
       }
