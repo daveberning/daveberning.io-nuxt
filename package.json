@@ -1,7 +1,7 @@
 {
   "name": "daveberning.io",
   "version": "1.0.0",
-  "description": "y handcrafted portfolio website created with Nuxt.js",
+  "description": "Dave Berning is a web developer and designer from Cincinnati, OH. He has been building interactive web applications and websites since 2012. He is also the author of \"Vue.js: Understanding It's Tools and Ecosystem\" and a contributing writer at Alligator.io",
   "author": "Dave Berning",
   "private": true,
   "scripts": {
