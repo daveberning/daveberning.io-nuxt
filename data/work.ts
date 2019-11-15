@@ -4,7 +4,7 @@ export const works: Work[] = [
   {
     name: `Drees Homes`,
     icon: `/images/drees-logo.svg`,
-    link: 'http://bearcastmedia.com/'
+    link: 'https://dreeshomes.com/'
   },
   {
     name: `M80`,
