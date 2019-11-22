@@ -1,16 +1,19 @@
 <template>
-  <div class="modal" :class="{ active: isActive }">
+  <div class="modal" :class="{ active: isActive }"
+       :style="`background: ${getThemeColors($store.state.theme).background}`">
     <div class="content">
       <router-link to="/" class="close"><img src="/images/cancel.svg" alt=""></router-link>
       <slot />
     </div>
-    <p class="right">Copyright &copy 2012 - {{ new Date().getFullYear() }}. All Rights Reserved.</p>
+    <p class="right" :style="`color: ${getThemeColors($store.state.theme).backgroundDarker}`">Copyright &copy 2012 - {{
+      new Date().getFullYear() }}. All Rights Reserved.</p>
   </div>
 </template>
 
 <script lang="ts">
   import Vue from 'vue'
   import {VueInstance} from '@/types'
+  import {getThemeColors} from '@/data/theme-colors'
 
   export default Vue.extend({
     name: 'Modal' as string,
@@ -23,6 +26,9 @@
     destroyed(): void {
       this.isActive = false
       document.body.classList.remove(this.bodyClass)
+    },
+    methods: {
+      getThemeColors
     },
     mounted(): void {
       this.isActive = true
@@ -39,7 +45,7 @@
 
 <style lang="scss">
   .modal {
-    background: #3e9e91;
+    // background: #3e9e91;
     height: 100vh;
     width: 100vw;
     color: #ffffff !important;

@@ -3,18 +3,21 @@
     <div class="wrapper">
       <div class="content">
         <picture>
-          <source srcset="images/dave-optimized-sm.png" media="(min-width: 1025px)">
+          <source :srcset="`images/dave-optimized-sm-${$store.state.theme}.png`" media="(min-width: 1025px)">
           <img src="images/dave-mobile.jpg" alt="PP">
         </picture>
-        <!--        <img src="images/dave-md-g.png" alt="">-->
-        <h1>{{ about.firstName }} {{ about.lastName }}</h1>
-        <h2>{{ about.role }} from {{ about.city }}, {{ about.state }}</h2>
-        <p class="left">Photography by Jason Bayer</p>
-        <p class="right">Copyright &copy 2012 - {{ new Date().getFullYear() }}. All Rights Reserved.</p>
-        <Navigation :navigation="navigation" />
+        <h1 :style="themeDarkTextColor">{{ about.firstName }} {{
+          about.lastName }}</h1>
+        <h2 :style="themeDarkTextColor">{{ about.role }} from {{ about.city
+          }}, {{ about.state }}</h2>
+        <p :style="themeDarkTextColor" class="left">Photography by Jason
+          Bayer</p>
+        <p :style="themeDarkTextColor" class="right">Copyright &copy 2012 -
+          {{ new Date().getFullYear() }}. All Rights Reserved.</p>
+        <Navigation :navigation="navigation" :theme-text-color="themeDarkTextColor" :theme-border="themeBorder" />
         <ul>
           <li v-for="media in socialMedia" :key="media.icon">
-            <a :href="media.href">
+            <a :href="media.href" :style="themeDarkTextColor">
               <i :class="`fab fa-${media.icon}`"></i>
             </a>
           </li>
@@ -28,6 +31,7 @@
   import Vue from 'vue'
   import Navigation from '@/components/Navigation.vue'
   import {About, NavigationItem, SocialMedia, VueInstance} from '@/types'
+  import {getThemeColors} from '@/data/theme-colors'
   import {about} from '@/data/about'
   import {socialMedia} from '@/data/social-media'
   import {navigation} from '@/data/navigation'
@@ -37,11 +41,25 @@
     components: {
       Navigation
     },
+    props: {
+      theme: {
+        required: false,
+        type: String
+      }
+    },
     data() {
       return {
         navigation: navigation as NavigationItem[],
         about: about as About,
         socialMedia: socialMedia as SocialMedia[]
+      }
+    },
+    computed: {
+      themeDarkTextColor(): string {
+        return `color: ${getThemeColors(this.$store.state.theme).textColorDark}`
+      },
+      themeBorder(): string {
+        return `border: 2px solid ${getThemeColors(this.$store.state.theme).textColorDark}`
       }
     },
     mounted(): void {
@@ -140,7 +158,7 @@
     }
 
     a {
-      color: #334241;
+      // color: #334241;
       font-size: 1.5rem;
     }
   }

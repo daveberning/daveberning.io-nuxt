@@ -2,7 +2,8 @@
   <Modal>
     <h1>Work</h1>
     <div class="grid">
-      <section v-for="work in works" :key="work.name">
+      <section v-for="work in works" :key="work.name"
+               :style="`background: ${getThemeColors($store.state.theme).backgroundDarker}`">
         <a :href="work.link">
           <img :src="work.icon" alt="">
         </a>
@@ -15,6 +16,7 @@
   import Vue from 'vue'
   import {works} from '@/data/work'
   import Modal from '@/components/Modal.vue'
+  import {getThemeColors} from '~/data/theme-colors'
   import {Work} from '@/types'
 
   export default Vue.extend({
@@ -26,6 +28,9 @@
       return {
         works: works as Work[]
       }
+    },
+    methods: {
+      getThemeColors
     }
   })
 </script>
@@ -51,7 +56,7 @@
 
     section {
       grid-column: span 1;
-      background: darken(#3e9e91, 7%);
+      // background: darken(#3e9e91, 7%);
       padding: 5rem 2rem;
       border-radius: 4px;
       display: flex;

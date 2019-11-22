@@ -2,11 +2,19 @@
   <Modal>
     <h1>Writing</h1>
     <div class="grid">
-      <a v-for="(writing, i) in writings" :href="writing.to">
+      <a v-for="(writing, i) in writings" :href="writing.to"
+         :style="`background: ${getThemeColors($store.state.theme).backgroundDarker}`">
         <h2>{{ writing.title }}</h2>
         <ul>
-          <li>{{ writing.date }}</li>
-          <li><span :class="{ book: writing.type.toLowerCase() === 'book' }">{{ writingType(writing) }}</span></li>
+          <li :style="sourceColor">{{ writing.date }}</li>
+          <li>
+            <span
+              :class="{ book: writing.type.toLowerCase() === 'book' }"
+              :style="writing.type.toLowerCase() === 'book' ? bookButtonStyles : sourceColor"
+            >
+              {{ writingType(writing) }}
+            </span>
+          </li>
         </ul>
       </a>
     </div>
@@ -17,6 +25,7 @@
   import Vue from 'vue'
   import Modal from '@/components/Modal.vue'
   import {Writing} from '@/types'
+  import {getThemeColors} from '~/data/theme-colors'
   import {writing} from '@/data/writing'
 
   export default Vue.extend({
@@ -29,10 +38,19 @@
         writings: writing as Writing[]
       }
     },
+    computed: {
+      bookButtonStyles() {
+        return `background: ${getThemeColors(this.$store.state.theme).background}`
+      },
+      sourceColor() {
+        return `color: ${getThemeColors(this.$store.state.theme).backgroundLighter}`
+      }
+    },
     methods: {
       writingType(piece: Writing): string {
         return piece.type.toLowerCase() === 'book' ? 'Buy Book' : piece.type
-      }
+      },
+      getThemeColors
     }
   })
 </script>
@@ -58,7 +76,7 @@
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: auto;
       grid-column: span 6;
-      background: darken(#3e9e91, 7%);
+      // background: darken(#3e9e91, 7%);
       padding: 2rem 2rem 2.5rem 2rem;
       border-radius: 4px;
       text-decoration: none;

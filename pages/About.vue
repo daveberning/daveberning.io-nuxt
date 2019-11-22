@@ -3,10 +3,10 @@
     <h1>About Dave</h1>
     <div class="grid">
       <div class="modal-content" v-html="about.bio"></div>
-      <div>
+      <div :style="`background: ${getThemeColors(this.$store.state.theme).backgroundDarker}`">
         <p>Currently at</p>
         <img :src="about.companyLogo" alt="">
-        <hr>
+        <hr :style="`border-color: ${getThemeColors(this.$store.state.theme).background}`">
         <p>B.F.A in Electronic Media from</p>
         <img :src="about.almaMaterLogo" alt="">
       </div>
@@ -18,6 +18,7 @@
   import Vue from 'vue'
   import {about} from '@/data/about'
   import Modal from '@/components/Modal.vue'
+  import {getThemeColors} from '@/data/theme-colors'
   import {About} from '@/types'
 
   export default Vue.extend({
@@ -29,6 +30,9 @@
       return {
         about: about as About
       }
+    },
+    methods: {
+      getThemeColors
     }
   })
 </script>
@@ -53,7 +57,7 @@
 
     & > div:last-child {
       grid-column: span 3;
-      background: darken(#3e9e91, 7%);
+      background: darken(#a83c44, 7%);
       padding: 4rem 2rem;
       border-radius: 4px;
 

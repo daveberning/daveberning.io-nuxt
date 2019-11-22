@@ -8,14 +8,15 @@
         <section v-for="field in fields" :key="field.id">
           <label :for="field.id">{{ field.label }}</label>
           <input :type="field.type" :id="field.id" :name="field.name" @input="ev => form[`${field.name}`] =
-          ev.target.value">
+          ev.target.value" :style="inputColor">
         </section>
         <section>
           <label for="message">Message</label>
           <textarea id="message" rows="5" name="message" @input="ev => form[`message`] =
-          ev.target.value"></textarea>
+          ev.target.value" :style="inputColor"></textarea>
         </section>
-        <button type="submit">Send</button>
+        <button type="submit" :style="`background: ${getThemeColors($store.state.theme).backgroundDarker}`">Send
+        </button>
       </form>
       <div class="message" v-else>
         <div>
@@ -29,7 +30,7 @@
       </div>
       <ul>
         <li v-for="media in socialMedia" :key="media.icon">
-          <a :href="media.href">
+          <a :href="media.href" :style="`background: ${getThemeColors($store.state.theme).backgroundDarker}`">
             <i :class="`fab fa-${media.icon}`"></i>
           </a>
         </li>
@@ -42,6 +43,7 @@
   import Vue from 'vue'
   import axios from 'axios'
   import Modal from '@/components/Modal.vue'
+  import {getThemeColors} from '~/data/theme-colors'
   import {socialMedia} from '@/data/social-media'
   import {FormField, FormModels, SocialMedia} from '~/types'
 
@@ -69,7 +71,13 @@
         formSubmitted: false as boolean
       }
     },
+    computed: {
+      inputColor(): string {
+        return `background: ${getThemeColors(this.$store.state.theme).backgroundLighter}`
+      }
+    },
     methods: {
+      getThemeColors,
       encode(data: any) {
         return Object.keys(data).map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`).join('&')
       },
@@ -207,7 +215,7 @@
 
   input,
   textarea {
-    background: lighten(#3e9e91, 6%);
+    background: lighten(#a83c44, 6%);
     padding: 1rem;
     border-radius: 4px;
     border: 0;
