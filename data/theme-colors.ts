@@ -12,26 +12,42 @@ const redTheme = {
   textColorDark: `#423333`
 }
 
-const orangeTheme = {
-  background: lightenDarkenColor('#ca6d31', 0),
-  backgroundDarker: lightenDarkenColor('#ca6d31', -20), // darken 7% of background color
-  backgroundLighter: lightenDarkenColor('#ca6d31', 15), // Lighten 6% of background color
-  textColorDark: `#ca6d31`
-}
-
 const blueTheme = {
-  background: lightenDarkenColor('#3374a8', 0),
-  backgroundDarker: lightenDarkenColor('#3374a8', -20), // darken 7% of background color
-  backgroundLighter: lightenDarkenColor('#3374a8', 15), // Lighten 6% of background color
-  textColorDark: `#ca6d31`
+  background: lightenDarkenColor('#2e5186', 0),
+  backgroundDarker: lightenDarkenColor('#2e5186', -20), // darken 7% of background color
+  backgroundLighter: lightenDarkenColor('#2e5186', 15), // Lighten 6% of background color
+  textColorDark: `#181b29`
 }
 
-export const listOfThemes = [
+const greenTheme = {
+  background: lightenDarkenColor('#40894e', 0),
+  backgroundDarker: lightenDarkenColor('#40894e', -20), // darken 7% of background color
+  backgroundLighter: lightenDarkenColor('#40894e', 15), // Lighten 6% of background color
+  textColorDark: `#30413c`
+}
+
+const purpleTheme = {
+  background: lightenDarkenColor('#8d6299', 0),
+  backgroundDarker: lightenDarkenColor('#8d6299', -20), // darken 7% of background color
+  backgroundLighter: lightenDarkenColor('#8d6299', 15), // Lighten 6% of background color
+  textColorDark: `#2a1e2b`
+}
+
+export const listOfThemes = [ // Order of swatches
   {name: 'default', color: defaultTheme.background},
-  {name: 'red', color: redTheme.background},
-  {name: 'orange', color: orangeTheme.background},
-  {name: 'blue', color: blueTheme.background}
+  {name: 'green', color: greenTheme.background},
+  {name: 'blue', color: blueTheme.background},
+  {name: 'purple', color: purpleTheme.background},
+  {name: 'red', color: redTheme.background}
 ]
+
+export function getThemeColors(theme: string) {
+  if (theme === 'red') return redTheme
+  else if (theme === 'green') return greenTheme
+  else if (theme === 'blue') return blueTheme
+  else if (theme === 'purple') return purpleTheme
+  else return defaultTheme
+}
 
 function lightenDarkenColor(col: string, amt: number) {
   var usePound = false
@@ -51,11 +67,4 @@ function lightenDarkenColor(col: string, amt: number) {
   else if (g < 0) g = 0
   return (usePound ? '#' : '') + (g | (b << 8) | (r << 16)).toString(16)
 
-}
-
-export function getThemeColors(theme: string) {
-  if (theme === 'red') return redTheme
-  else if (theme === 'orange') return orangeTheme
-  else if (theme === 'blue') return blueTheme
-  else return defaultTheme
 }

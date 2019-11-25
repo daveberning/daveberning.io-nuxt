@@ -29,6 +29,12 @@
     position: absolute;
     left: 1rem;
     bottom: 3rem;
+    display: none;
+    width: 25px;
+
+    @media screen and (min-width: 1025px) {
+      display: block;
+    }
 
     li:hover {
       cursor: pointer;
@@ -36,13 +42,18 @@
 
     li span {
       display: block;
-      width: 25px;
-      height: 25px;
+      width: 15px;
+      height: 15px;
       border-radius: 50%;
-      margin-top: 1rem;
+      border: 1px solid lighten(#000000, 15%);
+      margin: 1rem auto 0 auto;
+      transition: all .2s ease;
 
       &.active {
         border: 4px solid #000000;
+        width: 25px;
+        height: 25px;
+        transition: all .2s ease;
       }
     }
   }
