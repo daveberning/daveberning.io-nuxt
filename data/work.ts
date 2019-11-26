@@ -2,9 +2,19 @@ import {Work} from '@/types'
 
 export const works: Work[] = [
   {
+    name: `Kroger Wireless`,
+    icon: `/images/kroger-wireless-logo.svg`,
+    link: `https://play.google.com/store/apps/details?id=com.krogerwireless.myaccount&hl=en_US`
+  },
+  {
     name: `Drees Homes`,
     icon: `/images/drees-logo.svg`,
     link: 'https://dreeshomes.com/'
+  },
+  {
+    name: `EyeMed`,
+    icon: `/images/eyemed-logo.svg`,
+    link: `https://landing.eyemed.com/`
   },
   {
     name: `M80`,

@@ -45,7 +45,6 @@
 
 <style lang="scss">
   .modal {
-    // background: #3e9e91;
     height: 100vh;
     width: 100vw;
     color: #ffffff !important;
@@ -73,6 +72,7 @@
 
     .content {
       transition-delay: .35s;
+      padding: 0 0 2rem 0;
     }
 
     * {

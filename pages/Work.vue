@@ -8,6 +8,11 @@
           <img :src="work.icon" alt="">
         </a>
       </section>
+      <section>
+        <nuxt-link class="your-website" to="/contact">
+          <span>+<br>Your Website or Application</span>
+        </nuxt-link>
+      </section>
     </div>
   </Modal>
 </template>
@@ -36,6 +41,21 @@
 </script>
 
 <style lang="scss" scoped>
+  .your-website {
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 2rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      text-align: center;
+      line-height: 3rem;
+    }
+  }
+
   .grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
