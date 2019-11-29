@@ -1,6 +1,6 @@
 # daveberning.io
 
-> y handcrafted portfolio website created with Nuxt.js
+> My handcrafted portfolio website created with Nuxt.js
 
 ## Build Setup
 
