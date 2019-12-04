@@ -3,7 +3,8 @@
     <div class="wrapper">
       <div class="content">
         <picture>
-          <source :srcset="`images/dave-optimized-sm-${$store.state.theme}.png`" media="(min-width: 1025px)">
+          <source ref="image" :srcset="`images/compressed/dave-optimized-sm-${$store.state.theme}.jpg`"
+                  media="(min-width: 1025px)">
           <img src="images/dave-mobile.jpg" alt="PP">
         </picture>
         <h1 :style="themeDarkTextColor">{{ about.firstName }} {{
@@ -31,7 +32,7 @@
   import Vue from 'vue'
   import Navigation from '@/components/Navigation.vue'
   import {About, NavigationItem, SocialMedia, VueInstance} from '@/types'
-  import {getThemeColors} from '@/data/theme-colors'
+  import {getThemeColors, listOfThemes} from '@/data/theme-colors'
   import {about} from '@/data/about'
   import {socialMedia} from '@/data/social-media'
   import {navigation} from '@/data/navigation'
@@ -39,7 +40,7 @@
   export default Vue.extend({
     name: 'Home' as string,
     components: {
-      Navigation
+      Navigation,
     },
     props: {
       theme: {
@@ -51,7 +52,8 @@
       return {
         navigation: navigation as NavigationItem[],
         about: about as About,
-        socialMedia: socialMedia as SocialMedia[]
+        socialMedia: socialMedia as SocialMedia[],
+        imgs: [] as any
       }
     },
     computed: {
@@ -60,7 +62,7 @@
       },
       themeBorder(): string {
         return `border: 2px solid ${getThemeColors(this.$store.state.theme).textColorDark}`
-      }
+      },
     },
     mounted(): void {
       const self: VueInstance = this
