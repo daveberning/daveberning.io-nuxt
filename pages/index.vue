@@ -25,10 +25,10 @@
 </template>
 
 <script lang="ts">
-  import Vue, { reactive, computed } from 'vue'
+  import Vue from 'vue'
   import Navigation from '@/components/Navigation.vue'
   import {About, NavigationItem, SocialMedia, VueInstance} from '@/types'
-  import {getThemeColors, listOfThemes} from '@/data/theme-colors'
+  import { getThemeColors } from '@/data/theme-colors'
   import {about} from '@/data/about'
   import {socialMedia} from '@/data/social-media'
   import {navigation} from '@/data/navigation'
