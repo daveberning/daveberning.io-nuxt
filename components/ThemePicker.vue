@@ -31,6 +31,7 @@
     bottom: 3rem;
     display: none;
     width: 25px;
+    z-index: 101;
 
     @media screen and (min-width: 1025px) {
       display: block;

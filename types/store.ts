@@ -1,3 +1,4 @@
 export interface State {
-  theme: string
+  theme: string,
+  inspectionNotice: boolean | undefined
 }

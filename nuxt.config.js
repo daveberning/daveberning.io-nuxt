@@ -28,7 +28,9 @@ export default {
   },
   loading: {color: '#348479'},
   css: ['~/assets/main.scss'],
-  plugins: [],
+  plugins: [
+    '~/plugins/vue-composition-api'
+  ],
   transition: {
     name: 'slide',
     mode: ''

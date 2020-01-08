@@ -7,14 +7,10 @@
                   media="(min-width: 1025px)">
           <img src="images/dave-mobile.jpg" alt="PP">
         </picture>
-        <h1 :style="themeDarkTextColor">{{ about.firstName }} {{
-          about.lastName }}</h1>
-        <h2 :style="themeDarkTextColor">{{ about.role }} from {{ about.city
-          }}, {{ about.state }}</h2>
-        <p :style="themeDarkTextColor" class="left">Photography by Jason
-          Bayer</p>
-        <p :style="themeDarkTextColor" class="right">Copyright &copy 2012 -
-          {{ new Date().getFullYear() }}. All Rights Reserved.</p>
+        <h1 :style="themeDarkTextColor">{{ about.firstName }} {{ about.lastName }}</h1>
+        <h2 :style="themeDarkTextColor">{{ about.role }} from {{ about.city }}, {{ about.state }}</h2>
+        <p :style="themeDarkTextColor" class="left">Photography by Jason Bayer</p>
+        <p :style="themeDarkTextColor" class="right">Copyright &copy 2012 - {{ new Date().getFullYear() }}. All Rights Reserved.</p>
         <Navigation :navigation="navigation" :theme-text-color="themeDarkTextColor" :theme-border="themeBorder" />
         <ul>
           <li v-for="media in socialMedia" :key="media.icon">
@@ -29,7 +25,7 @@
 </template>
 
 <script lang="ts">
-  import Vue from 'vue'
+  import Vue, { reactive, computed } from 'vue'
   import Navigation from '@/components/Navigation.vue'
   import {About, NavigationItem, SocialMedia, VueInstance} from '@/types'
   import {getThemeColors, listOfThemes} from '@/data/theme-colors'
@@ -128,7 +124,7 @@
     left: 1rem;
     display: none;
 
-    @media screen and (min-width: 1760px) {
+    @media screen and (min-width: 1400px) {
       display: block;
     }
   }
@@ -137,7 +133,7 @@
     left: 0;
     right: 0;
 
-    @media screen and (min-width: 1760px) {
+    @media screen and (min-width: 1400px) {
       left: unset;
       right: 1rem;
     }
@@ -193,6 +189,10 @@
         width: auto;
       }
 
+      @media screen and (min-width: 1400px) {
+        margin-right: 10rem;
+      }
+
       @media screen and (min-width: 1760px) {
         margin-right: 3rem;
       }
@@ -226,6 +226,10 @@
         font-size: 8rem;
         max-width: 600px;
         left: 3rem;
+      }
+
+      @media screen and (min-width: 1400px) {
+        left: 10rem;
       }
 
       @media screen and (min-width: 1760px) {
