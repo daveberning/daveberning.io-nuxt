@@ -1,12 +1,12 @@
 <template>
   <div id="wrapper" :style="`background: ${getThemeColors($store.state.theme).textColorDark}`">
     <div>
-      <h3><strong>Trying to peak at my code?</strong></h3>
+      <h3><strong>Trying to peek at my code?</strong></h3>
       <p>I'm flattered :)</p>
       <p>Admiring, copying, critiquing, and or experimenting with code just makes the web a better place. So go right
         ahead. Copy any code that you want, improve it, and call it your own.</p>
       <ul>
-        <li><a href="#">[G] View on GitHub</a></li>
+        <li><a href="https://github.com/daveberning/daveberning.io-nuxt">[G] View on GitHub</a></li>
         <li>[B] Continue in {{ browserName }} DevTools</li>
       </ul>
       <p><small>(I promise that I won't show this again until you refresh your browser)</small></p>
