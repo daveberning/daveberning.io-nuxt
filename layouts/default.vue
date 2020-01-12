@@ -2,7 +2,8 @@
   <div @contextmenu="openCodeInspectionNotice($event)">
     <nuxt />
     <theme-picker />
-    <code-inspection v-if="contextMenuActive" @closeCodeInspection="contextMenuActive = false" />
+    <code-inspection v-if="contextMenuActive && $nuxt.$route.path !== '/uses'" @closeCodeInspection="contextMenuActive
+     = false" />
   </div>
 </template>
 
