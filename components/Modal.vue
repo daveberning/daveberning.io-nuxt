@@ -1,12 +1,11 @@
 <template>
-  <div class="modal" :class="{ active: isActive }"
-       :style="`background: ${getThemeColors($store.state.theme).background}`">
+  <div class="modal" :class="{ active: isActive }" :style="`background: ${getThemeColors($store.state.theme).background}`">
     <div class="content">
       <router-link to="/" class="close"><img src="/images/cancel.svg" alt=""></router-link>
       <slot />
     </div>
-    <p class="right" :style="`color: ${getThemeColors($store.state.theme).backgroundDarker}`">Copyright &copy 2012 - {{
-      new Date().getFullYear() }}. All Rights Reserved.</p>
+    <p class="right" :style="`color: ${getThemeColors($store.state.theme).backgroundDarker}`">Copyright &copy 2012 -
+      {{ new Date().getFullYear() }}. All Rights Reserved.</p>
   </div>
 </template>
 

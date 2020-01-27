@@ -1,35 +1,10 @@
 <template>
   <Modal>
     <h1>Contact</h1>
-    <div class="grid">
-      <form action="/contact" method="post" name="contact" netlify data-netlify-honeypot="bot-field"
-            @submit.prevent="handleSubmit"
-            v-if="formSubmitted === false">
-        <section v-for="field in fields" :key="field.id">
-          <label :for="field.id">{{ field.label }}</label>
-          <input :type="field.type" :id="field.id" :name="field.name" @input="ev => form[`${field.name}`] =
-          ev.target.value" :style="inputColor">
-        </section>
-        <section>
-          <label for="message">Message</label>
-          <textarea id="message" rows="5" name="message" @input="ev => form[`message`] =
-          ev.target.value" :style="inputColor"></textarea>
-        </section>
-        <button type="submit" :style="`background: ${getThemeColors($store.state.theme).backgroundDarker}`">Send
-        </button>
-      </form>
-      <div class="message" v-else>
-        <div>
-          <h2>Thanks for the message, {{ form.firstName }}!</h2>
-          <p>We will be in touch shortly. In the mean time, please
-            <nuxt-link to="/writing">read some of my writing</nuxt-link>
-            or
-            <nuxt-link to="/work">take a look at some of my work.</nuxt-link>
-          </p>
-        </div>
-      </div>
-      <ul>
-        <li v-for="media in socialMedia" :key="media.icon">
+    <div class="is-grid">
+      <contact-form :form="form" :fields="fields" class="is-col-7-lg" />
+      <ul class="is-col-5-lg is-grid has-col-2">
+        <li class="is-col-1-md" v-for="media in socialMedia" :key="media.icon">
           <a :href="media.href" :style="`background: ${getThemeColors($store.state.theme).backgroundDarker}`">
             <i :class="`fab fa-${media.icon}`"></i>
           </a>
@@ -42,15 +17,17 @@
 <script lang="ts">
   import Vue from 'vue'
   import axios from 'axios'
+  import { getThemeColors } from '~/data/theme-colors'
+  import { socialMedia } from '@/data/social-media'
+  import { FormField, FormModels, SocialMedia } from '~/types'
+  import ContactForm from '@/components/ContactForm.vue'
   import Modal from '@/components/Modal.vue'
-  import {getThemeColors} from '~/data/theme-colors'
-  import {socialMedia} from '@/data/social-media'
-  import {FormField, FormModels, SocialMedia} from '~/types'
 
   export default Vue.extend({
     name: 'Contact' as string,
     components: {
-      Modal
+      Modal,
+      ContactForm
     },
     data() {
       return {
@@ -69,11 +46,6 @@
           message: ''
         } as FormModels,
         formSubmitted: false as boolean
-      }
-    },
-    computed: {
-      inputColor(): string {
-        return `background: ${getThemeColors(this.$store.state.theme).backgroundLighter}`
       }
     },
     methods: {
@@ -95,63 +67,26 @@
 </script>
 
 <style lang="scss" scoped>
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-column-gap: 2rem;
-    grid-row-gap: 2rem;
+  li {
+    padding: 5rem;
 
-    @media screen and (min-width: 967px) {
-      grid-template-columns: repeat(3, 1fr);
-    }
+    i { font-size: 6rem; }
   }
 
-  ul {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-column-gap: 2rem;
-    grid-row-gap: 2rem;
-    grid-column: span 2;
-
-    @media screen and (min-width: 768px) {
-      grid-column: span 2;
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @media screen and (min-width: 1024px) {
-      grid-column: span 1;
-    }
-
-    li {
-      grid-column: span 2;
-      background: darken(#3e9e91, 7%);
-      border-radius: 4px;
-      padding: 5rem;
-
-      @media screen and (min-width: 768px) {
-        grid-column: span 1;
-      }
-
-      i {
-        font-size: 6rem;
-      }
-    }
-
-    li a {
-      background: none;
-      color: #ffffff;
-      position: absolute;
-      z-index: 9999;
-      text-decoration: none;
-      height: 100%;
-      width: 100%;
-      padding: 0;
-      justify-content: center;
-      align-items: center;
-      top: 0 !important;
-      left: 0 !important;
-      display: flex;
-    }
+  li a {
+    border-radius: .25rem;
+    color: #ffffff;
+    position: absolute;
+    z-index: 9999;
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    top: 0 !important;
+    left: 0 !important;
+    display: flex;
   }
 
   form,

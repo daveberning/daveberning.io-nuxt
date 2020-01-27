@@ -3,8 +3,7 @@
     <div class="wrapper">
       <div class="content">
         <picture>
-          <source ref="image" :srcset="`images/compressed/dave-optimized-sm-${$store.state.theme}.jpg`"
-                  media="(min-width: 1025px)">
+          <source ref="image" :srcset="`images/compressed/dave-optimized-sm-${$store.state.theme}.jpg`" media="(min-width: 1025px)">
           <img src="images/dave-mobile.jpg" alt="PP">
         </picture>
         <h1 :style="themeDarkTextColor">{{ about.firstName }} {{ about.lastName }}</h1>

@@ -27,7 +27,7 @@ export default {
     ]
   },
   loading: {color: '#348479'},
-  css: ['~/assets/main.scss'],
+  css: ['@daveberning/griddle/dist/grid.css', '~/assets/main.scss'],
   plugins: [
     '~/plugins/vue-composition-api'
   ],
