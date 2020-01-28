@@ -1,19 +1,16 @@
 <template>
-  <form v-if="formSubmitted === false" :fields="fields" action="/contact" method="post" name="contact" netlify
-        data-netlify-honeypot="bot-field"
-        @submit.prevent="handleSubmit">
-    <section v-for="field in fields" :key="field.id">
+  <form class="is-grid has-col-2" v-if="formSubmitted === false" action="/contact" method="post" name="contact"
+        @submit.prevent="handleSubmit" netlify data-netlify-honeypot="bot-field">
+    <section class="is-col-1-md" v-for="field in fields" :key="field.id">
       <label :for="field.id">{{ field.label }}</label>
-      <input :type="field.type" :id="field.id" :name="field.name"
-             @input="ev => form[`${field.name}`] = ev.target.value" :style="inputColor">
+      <input :type="field.type" :id="field.id" :name="field.name" @input="bindFieldValue($event, field.name)" :style="$store.getters.lightBkgColor">
     </section>
-    <section>
+    <section class="is-col-2">
       <label for="message">Message</label>
-      <textarea id="message" rows="5" name="message" @input="ev => form[`message`] = ev.target.value"
-                :style="inputColor"></textarea>
+      <textarea id="message" rows="5" name="message" @input="bindFieldValue($event, 'message')"
+                :style="$store.getters.lightBkgColor" />
     </section>
-    <button type="submit" :style="`background: ${getThemeColors($store.state.theme).backgroundDarker}`">Send
-    </button>
+    <button type="submit" :style="$store.getters.darkBkgColor">Send</button>
   </form>
   <div class="message" v-else>
     <div>
@@ -29,101 +26,72 @@
 
 <script lang="ts">
   import Vue from 'vue'
-  import { getThemeColors } from '~/data/theme-colors'
-  import {FormField, FormModels} from '~/types'
+  import { FormField, FormModels } from '~/types'
+  import axios from '~/node_modules/axios'
 
   export default Vue.extend({
-    props: {
-      fields: {
-        type: Array as () => FormField[],
-        required: true,
-      },
-      form: {
-        type: Object as () => FormModels,
-        required: true
-      }
-    },
     data() {
       return {
+        fields: [
+          { id: 'firstName', type: 'text', label: 'First Name', name: 'firstName' },
+          { id: 'lastName', type: 'text', label: 'Last Name', name: 'lastName' },
+          { id: 'phone', type: 'tel', label: 'Phone Number', name: 'phone' },
+          { id: 'email', type: 'email', label: 'Email Address', name: 'email' }
+        ] as FormField[],
+        form: {
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          message: ''
+        } as FormModels,
         formSubmitted: false as boolean
       }
     },
-    computed: {
-      inputColor(): string {
-        return `background: ${getThemeColors(this.$store.state.theme).backgroundLighter}`
-      }
-    },
     methods: {
-      getThemeColors
+      bindFieldValue(e: any, fieldName: string): void {
+        // @ts-ignore
+        this.form[fieldName] = e.target.value
+      },
+      encode(data: any): string {
+        return Object.keys(data).map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`).join('&')
+      },
+      handleSubmit(): void {
+        const axiosConfig: any = {
+          header: { 'Content-Type': 'application/x-www-form-urlencoded' }
+        }
+        axios.post('/', this.encode({'form-name': 'contact', ...this.form}), axiosConfig)
+        .then(() => this.formSubmitted = true)
+      }
     }
   })
 </script>
 
 <style lang="scss">
-  form,
-  .message {
-    grid-column: span 2;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-column-gap: 2rem;
-    grid-row-gap: 2rem;
-    grid-template-rows: auto;
-
-    section {
-      grid-column: span 4;
-
-      @media screen and (min-width: 768px) {
-        grid-column: span 2;
-      }
-    }
-
-    section:nth-child(5) {
-      grid-column: span 4;
-    }
-
-    button {
-      grid-column: span 4;
-      grid-row-start: 6;
-      display: inline-block;
-      border: none;
-      background: darken(#3e9e91, 7%);
-      font-size: 2rem;
-      padding: 2rem;
-      text-align: center !important;
-      color: #ffffff !important;
-      border-radius: 4px;
-
-      @media screen and (min-width: 768px) {
-        grid-row-start: 4;
-        grid-column: span 4;
-      }
-
-      @media screen and (min-width: 1024px) {
-        grid-column: span 2;
-      }
-    }
+  form button {
+    display: inline-block;
+    border: none;
+    background: darken(#3e9e91, 7%);
+    font-size: 2rem;
+    padding: 2rem;
+    text-align: center !important;
+    color: #ffffff !important;
+    border-radius: .25rem;
   }
 
   .message {
-    h2 {
-      margin-bottom: 2rem;
-    }
-
-    & > div {
-      grid-column: span 4;
-    }
+    h2 { margin-bottom: 2rem; }
+    & > div { grid-column: span 4; }
   }
 
   input,
-  label {
-    display: block;
-  }
+  label { display: block; }
 
   input,
   textarea {
     background: lighten(#a83c44, 6%);
     padding: 1rem;
-    border-radius: 4px;
+    border-radius: .25rem;
     border: 0;
     margin-top: .5rem;
     font-size: 2rem;

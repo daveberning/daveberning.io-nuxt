@@ -1,42 +1,33 @@
 <template>
-  <Modal>
+  <modal-content>
     <h1>Work</h1>
     <div class="is-grid has-col-6">
-      <section class="is-col-3-md is-col-2-lg" v-for="work in works" :key="work.name"
-               :style="`background: ${getThemeColors($store.state.theme).backgroundDarker}`">
+      <section class="is-col-3-sm is-col-2-lg" v-for="work in works" :key="work.name" :style="$store.getters.darkBkgColor">
         <a :href="work.link">
-          <img :src="work.icon" alt="">
+          <img :src="work.icon" :alt="work.alt">
         </a>
       </section>
-      <section class="is-col-3-md is-col-2-lg">
+      <section class="is-col-3-sm is-col-2-lg">
         <nuxt-link class="your-website" to="/contact">
           <span>+<br>Your Website or Application</span>
         </nuxt-link>
       </section>
     </div>
-  </Modal>
+  </modal-content>
 </template>
 
 <script lang="ts">
   import Vue from 'vue'
   import { works } from '@/data/work'
-  import { getThemeColors } from '~/data/theme-colors'
   import { Work } from '@/types'
-  import Modal from '@/components/Modal.vue'
 
   export default Vue.extend({
     name: 'Work' as string,
-    components: {
-      Modal
-    },
     data() {
       return {
         works: works as Work[]
       }
     },
-    methods: {
-      getThemeColors
-    }
   })
 </script>
 

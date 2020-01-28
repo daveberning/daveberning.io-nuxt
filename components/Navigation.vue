@@ -2,7 +2,7 @@
   <nav>
     <ul>
       <li v-for="item in navigation" :key="item.to">
-        <nuxt-link :to="item.to" :style="`${themeTextColor}; ${themeBorder}`">
+        <nuxt-link :to="item.to" :style="`${$store.getters.darkTextColor}; ${$store.getters.darkBorder}`">
           {{ item.text }}
           <span>{{ item.keyboard }}</span>
         </nuxt-link>
@@ -14,6 +14,7 @@
 <script lang="ts">
   import Vue from 'vue'
   import {NavigationItem} from '@/types'
+  import {getThemeColors} from '~/data/theme-colors'
 
   export default Vue.extend({
     name: 'Navigation' as string,
@@ -22,15 +23,7 @@
         type: Array as () => NavigationItem[],
         required: true
       },
-      themeTextColor: {
-        type: String as () => string,
-        required: false
-      },
-      themeBorder: {
-        type: String as () => string,
-        required: false
-      }
-    }
+    },
   })
 </script>
 
@@ -38,13 +31,10 @@
   nav ul li {
     display: block;
 
-    @media screen and (min-width: 767px) {
-      display: inline-block;
-    }
+    @media screen and (min-width: 767px) { display: inline-block; }
 
     a {
       border: 2px solid #334241;
-      // color: #334241;
       padding: .5rem 2rem 1.25rem 2rem;
       border-radius: 100px;
       margin: 1.5rem 0 0 0;
@@ -85,9 +75,7 @@
         font-style: italic;
       }
 
-      @media screen and (min-width: 2000px) {
-        font-size: 1vw;
-      }
+      @media screen and (min-width: 2000px) { font-size: 1vw; }
     }
   }
 </style>

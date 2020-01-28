@@ -3,12 +3,12 @@ export default {
   head: {
     title: `Dave Berning | Web Developer | Cincinnati, OH`,
     meta: [
-      {charset: 'utf-8'},
-      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-      {hid: 'description', name: 'description', content: process.env.npm_package_description || ''}
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
         type: 'text/css',
@@ -23,13 +23,13 @@ export default {
       }
     ],
     script: [
-      {src: 'https://kit.fontawesome.com/8347ef088f.js'}
+      { src: 'https://kit.fontawesome.com/8347ef088f.js' }
     ]
   },
   loading: {color: '#348479'},
-  css: ['@daveberning/griddle/dist/grid.css', '~/assets/main.scss'],
+  css: [ '@daveberning/griddle/dist/grid.css', '~/assets/main.scss' ],
   plugins: [
-    '~/plugins/vue-composition-api'
+    '~/plugins/global-components'
   ],
   transition: {
     name: 'slide',
@@ -38,9 +38,13 @@ export default {
   buildModules: [
     '@nuxt/typescript-build'
   ],
-  modules: [],
+  modules: [ '@nuxtjs/style-resources' ],
+  styleResources: {
+    scss: [
+      '@daveberning/griddle/src/scss/variables/breakpoints.scss',
+    ]
+  },
   build: {
-    extend(config, ctx) {
-    }
+    extend(config, ctx) {}
   }
 }

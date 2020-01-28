@@ -23,3 +23,10 @@ export interface Writing {
   type: string;
   to: string;
 }
+
+export interface Uses {
+  websiteTechnologies: string[],
+  software: string[],
+  onRepeat: string[],
+  podcasts: string[]
+}

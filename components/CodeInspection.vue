@@ -53,7 +53,8 @@
     height: 100vh;
     width: 100vw;
     position: absolute;
-    z-index: 100;
+    top: 0;
+    z-index: 12000;
     font-family: "Courier New", serif;
     color: #fff;
     display: flex;

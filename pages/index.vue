@@ -6,18 +6,12 @@
           <source ref="image" :srcset="`images/compressed/dave-optimized-sm-${$store.state.theme}.jpg`" media="(min-width: 1025px)">
           <img src="images/dave-mobile.jpg" alt="PP">
         </picture>
-        <h1 :style="themeDarkTextColor">{{ about.firstName }} {{ about.lastName }}</h1>
-        <h2 :style="themeDarkTextColor">{{ about.role }} from {{ about.city }}, {{ about.state }}</h2>
-        <p :style="themeDarkTextColor" class="left">Photography by Jason Bayer</p>
-        <p :style="themeDarkTextColor" class="right">Copyright &copy 2012 - {{ new Date().getFullYear() }}. All Rights Reserved.</p>
-        <Navigation :navigation="navigation" :theme-text-color="themeDarkTextColor" :theme-border="themeBorder" />
-        <ul>
-          <li v-for="media in socialMedia" :key="media.icon">
-            <a :href="media.href" :style="themeDarkTextColor">
-              <i :class="`fab fa-${media.icon}`"></i>
-            </a>
-          </li>
-        </ul>
+        <theme-text tag="h1">{{ about.firstName }} {{ about.lastName }}</theme-text>
+        <theme-text tag="h2">{{ about.role }} from {{ about.city }}, {{ about.state }}</theme-text>
+        <theme-text class="left">Photography by Jason Bayer</theme-text>
+        <theme-text class="right">Copyright &copy 2012 - {{ new Date().getFullYear() }}. All Rights Reserved.</theme-text>
+        <navigation :navigation="navigation" />
+        <social-media-icons :social-media="socialMedia" />
       </div>
     </div>
   </div>
@@ -25,17 +19,18 @@
 
 <script lang="ts">
   import Vue from 'vue'
+  import { About, NavigationItem, SocialMedia, VueInstance } from '@/types'
+  import { about } from '@/data/about'
+  import { socialMedia } from '@/data/social-media'
+  import { navigation } from '@/data/navigation'
   import Navigation from '@/components/Navigation.vue'
-  import {About, NavigationItem, SocialMedia, VueInstance} from '@/types'
-  import { getThemeColors } from '@/data/theme-colors'
-  import {about} from '@/data/about'
-  import {socialMedia} from '@/data/social-media'
-  import {navigation} from '@/data/navigation'
+  import SocialMediaIcons from '~/components/SocialMediaIcons.vue'
 
   export default Vue.extend({
     name: 'Home' as string,
     components: {
       Navigation,
+      SocialMediaIcons
     },
     props: {
       theme: {
@@ -50,14 +45,6 @@
         socialMedia: socialMedia as SocialMedia[],
         imgs: [] as any
       }
-    },
-    computed: {
-      themeDarkTextColor(): string {
-        return `color: ${getThemeColors(this.$store.state.theme).textColorDark}`
-      },
-      themeBorder(): string {
-        return `border: 2px solid ${getThemeColors(this.$store.state.theme).textColorDark}`
-      },
     },
     mounted(): void {
       const self: VueInstance = this
@@ -141,23 +128,10 @@
   ul li {
     display: inline-block;
     margin: 2.5rem 1rem 0 0;
-
-    @media screen and (min-width: 812px) {
-      margin: 1rem 1rem 0 0;
-    }
-
-    @media screen and (min-width: 967px) {
-      margin: 2.5rem 1rem 0 0;
-    }
-
-    &:last-child {
-      margin-right: 0;
-    }
-
-    a {
-      // color: #334241;
-      font-size: 1.5rem;
-    }
+    &:last-child { margin-right: 0; }
+    a { font-size: 1.5rem; }
+    @media screen and (min-width: 812px) { margin: 1rem 1rem 0 0; }
+    @media screen and (min-width: 967px) { margin: 2.5rem 1rem 0 0; }
   }
 
   .wrapper {
