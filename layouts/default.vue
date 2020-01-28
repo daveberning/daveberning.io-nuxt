@@ -1,9 +1,7 @@
 <template>
-  <div @contextmenu="openCodeInspectionNotice($event)">
+  <div>
     <nuxt />
-    <theme-picker />
-    <code-inspection v-if="contextMenuActive && $nuxt.$route.path !== '/uses'" @closeCodeInspection="contextMenuActive
-     = false" />
+    <code-inspection v-if="contextMenuActive && $nuxt.$route.path !== '/uses'" @closeCodeInspection="contextMenuActive = false" />
   </div>
 </template>
 
@@ -33,6 +31,6 @@
     },
     mounted() {
       this.$store.dispatch('dismissCodeInspectionNotice', false)
-    }
+    },
   })
 </script>

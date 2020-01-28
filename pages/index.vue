@@ -3,15 +3,18 @@
     <div class="wrapper">
       <div class="content">
         <picture>
-          <source ref="image" :srcset="`images/compressed/dave-optimized-sm-${$store.state.theme}.jpg`" media="(min-width: 1025px)">
+          <source ref="image" :srcset="`images/compressed/dave-optimized-sm-${$store.state.theme}.jpg`"
+                  media="(min-width: 1335px)">
           <img src="images/dave-mobile.jpg" alt="PP">
         </picture>
-        <theme-text tag="h1">{{ about.firstName }} {{ about.lastName }}</theme-text>
-        <theme-text tag="h2">{{ about.role }} from {{ about.city }}, {{ about.state }}</theme-text>
-        <theme-text class="left">Photography by Jason Bayer</theme-text>
-        <theme-text class="right">Copyright &copy 2012 - {{ new Date().getFullYear() }}. All Rights Reserved.</theme-text>
-        <navigation :navigation="navigation" />
-        <social-media-icons :social-media="socialMedia" />
+        <div>
+          <theme-text tag="h1">{{ about.firstName }} {{ about.lastName }}</theme-text>
+          <theme-text tag="h2">{{ about.role }} from {{ about.city }}, {{ about.state }}</theme-text>
+          <theme-text class="left">Photography by Jason Bayer</theme-text>
+          <theme-text class="right">Copyright &copy 2012 - {{ new Date().getFullYear() }}. All Rights Reserved.</theme-text>
+          <navigation :navigation="navigation" />
+          <social-media-icons :social-media="socialMedia" />
+        </div>
       </div>
     </div>
   </div>
@@ -78,11 +81,9 @@
     line-height: 4rem;
     margin: 1rem 0 0 0;
 
-    @media screen and (min-width: 812px) {
-      margin: 0;
-    }
+    @media screen and (min-width: 812px) { margin: 0; }
 
-    @media screen and (min-width: 1025px) {
+    @media screen and (min-width: 1335px) {
       font-size: 7rem;
       line-height: 11rem;
       margin-bottom: 0;
@@ -93,7 +94,7 @@
     font-size: 1.5rem;
     line-height: 2.25rem;
 
-    @media screen and (min-width: 1025px) {
+    @media screen and (min-width: 1335px) {
       font-size: 2rem;
       line-height: 2rem;
     }
@@ -157,17 +158,21 @@
       margin-right: 0;
       width: 100%;
 
-      @media screen and (min-width: 1025px) {
+      @media screen and (min-width: 1335px) {
         margin-right: 1rem;
         width: auto;
       }
 
       @media screen and (min-width: 1400px) {
-        margin-right: 10rem;
+        margin-right: 2rem;
+      }
+
+      @media screen and (min-width: 1592px) {
+        margin-right: 4rem;
       }
 
       @media screen and (min-width: 1760px) {
-        margin-right: 3rem;
+        margin-right: 0;
       }
 
       @media screen and (min-width: 2000px) {
@@ -179,6 +184,7 @@
       width: 150px;
       border-radius: 100%;
       border: 5px solid #3e9e91;
+      z-index: -1;
 
       @media screen and (min-width: 812px) {
         width: 100px;
@@ -188,7 +194,7 @@
         width: 225px;
       }
 
-      @media screen and (min-width: 1025px) {
+      @media screen and (min-width: 1336px) {
         position: absolute;
         width: 100%;
         top: 5px;
@@ -202,7 +208,11 @@
       }
 
       @media screen and (min-width: 1400px) {
-        left: 10rem;
+        left: 2rem;
+      }
+
+      @media screen and (min-width: 1592px) {
+        left: 8rem;
       }
 
       @media screen and (min-width: 1760px) {
