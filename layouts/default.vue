@@ -1,7 +1,7 @@
 <template>
   <div>
     <nuxt />
-    <code-inspection v-if="contextMenuActive && $nuxt.$route.path !== '/uses'" @closeCodeInspection="contextMenuActive = false" />
+    <theme-picker />
   </div>
 </template>
 

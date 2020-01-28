@@ -1,7 +1,8 @@
 <template>
-  <div class="modal" :class="{ active: isActive }" :style="`background: ${getThemeColors($store.state.theme).background}`">
-    <div class="content">
-      <router-link to="/" class="close"><img src="/images/cancel.svg" alt=""></router-link>
+  <div class="modal" :class="[ { active: isActive }, { regular: !this.isInverted }]"
+       :style="`background: ${backgroundColor}; color: ${textColor} !important;`">
+    <div class="content" :class="{ regular: !this.isInverted }">
+      <router-link to="/" class="close"><img src="/images/cancel.svg" alt="Close"></router-link>
       <slot />
     </div>
     <p class="right" :style="`color: ${getThemeColors($store.state.theme).backgroundDarker}`">Copyright &copy 2012 -
@@ -16,6 +17,13 @@
 
   export default Vue.extend({
     name: 'Modal' as string,
+    props: {
+      isInverted: {
+        type: Boolean as () => boolean,
+        required: false,
+        default: false
+      }
+    },
     data() {
       return {
         isActive: true as boolean,
@@ -28,6 +36,14 @@
     },
     methods: {
       getThemeColors
+    },
+    computed: {
+      backgroundColor() {
+        return this.isInverted ? 'white' : `${getThemeColors(this.$store.state.theme).background}`
+      },
+      textColor() {
+        return this.isInverted ? `${getThemeColors(this.$store.state.theme).background}` : 'white'
+      }
     },
     mounted(): void {
       this.isActive = true
@@ -46,18 +62,11 @@
   .modal {
     height: 100vh;
     width: 100vw;
-    color: #ffffff !important;
     padding: 1rem;
     overflow: auto;
     z-index: 10000;
-
-    @media screen and (min-width: 768px) {
-      padding: 2rem;
-    }
-
-    @media screen and (min-width: 1200px) {
-      padding: 2rem 4rem;
-    }
+    @media screen and (min-width: 768px) { padding: 2rem; }
+    @media screen and (min-width: 1200px) { padding: 2rem 4rem; }
 
     h1 {
       font-size: 4rem;
@@ -74,8 +83,13 @@
       padding: 0 0 2rem 0;
     }
 
-    * {
+    &.regular * {
       color: #ffffff;
+      text-align: left;
+      position: relative;
+    }
+
+    * {
       text-align: left;
       position: relative;
     }

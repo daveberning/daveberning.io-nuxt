@@ -10,8 +10,8 @@
         <div>
           <theme-text tag="h1">{{ about.firstName }} {{ about.lastName }}</theme-text>
           <theme-text tag="h2">{{ about.role }} from {{ about.city }}, {{ about.state }}</theme-text>
-          <theme-text class="left">Photography by Jason Bayer</theme-text>
-          <theme-text class="right">Copyright &copy 2012 - {{ new Date().getFullYear() }}. All Rights Reserved.</theme-text>
+          <theme-text tag="p" class="left">Photography by Jason Bayer</theme-text>
+          <theme-text tag="p" class="right">Copyright &copy 2012 - {{ new Date().getFullYear() }}. All Rights Reserved.</theme-text>
           <navigation :navigation="navigation" />
           <social-media-icons :social-media="socialMedia" />
         </div>

@@ -13,7 +13,7 @@
       tag: {
         type: String as () => string,
         required: false,
-        default: 'p'
+        default: 'div'
       }
     },
     computed: {
