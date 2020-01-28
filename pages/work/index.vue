@@ -18,8 +18,8 @@
 
 <script lang="ts">
   import Vue from 'vue'
-  import { works } from '@/data/work'
-  import { Work } from '@/types'
+  import { works } from '~/data/work'
+  import { Work } from '~/types'
 
   export default Vue.extend({
     name: 'Work' as string,
