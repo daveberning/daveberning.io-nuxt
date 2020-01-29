@@ -47,13 +47,6 @@
     },
     mounted(): void {
       this.isActive = true
-      const self: VueInstance = this
-      window.addEventListener('keyup', (e: KeyboardEvent) => {
-        if (e.keyCode === 27) {
-          self.$router.push('/')
-        } // Esc
-      })
-      document.body.classList.add(this.bodyClass)
     }
   })
 </script>
@@ -72,7 +65,7 @@
       font-size: 4rem;
       line-height: 7rem;
 
-      @media screen and (min-width: 967px) {
+      @media screen and (min-width: $lg) {
         font-size: 7rem;
         line-height: 11rem;
       }
@@ -103,7 +96,7 @@
       padding: .5rem 1rem;
       z-index: 9999;
 
-      @media screen and (min-width: 967px) {
+      @media screen and (min-width: $lg) {
         top: 15px;
         right: 10px;
       }
@@ -112,7 +105,7 @@
         width: 25px;
         height: 25px;
 
-        @media screen and (min-width: 967px) {
+        @media screen and (min-width: $lg) {
           width: 50px;
           height: 50px;
         }
@@ -125,7 +118,7 @@
       font-weight: 300;
       margin-bottom: 2rem;
 
-      @media screen and (min-width: 967px) {
+      @media screen and (min-width: $lg) {
         font-size: 1.5rem;
         line-height: 3rem;
       }
@@ -146,7 +139,7 @@
         color: lighten(#3e9e91, 20%);
         line-height: 1rem;
 
-        @media screen and (min-width: 967px) {
+        @media screen and (min-width: $lg) {
           position: absolute;
           line-height: 3rem;
           right: 4rem;

@@ -2,7 +2,7 @@
   <modal-content>
     <h1>Writing</h1>
     <div class="is-grid">
-      <a class="is-col-6-md is-col-4-xl is-col-3-xxl" v-for="(writing, i) in writings" :key="i" :href="writing.to" :style="$store.getters.darkBkgColor">
+      <a class="is-col-6-md is-col-4-xl" v-for="(writing, i) in writings" :key="i" :href="writing.to" :style="$store.getters.darkBkgColor">
         <h2>{{ writing.title }}</h2>
         <ul class="is-grid has-col-2">
           <li class="is-col-1" :style="$store.getters.textColor">{{ writing.date }}</li>
@@ -62,7 +62,7 @@
 
     ul {
       padding: 0 2rem;
-      position: absolute;
+      position: absolute !important;
       bottom: 1rem;
       width: 100%;
       left: 0;

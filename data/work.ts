@@ -4,26 +4,26 @@ export const works: Work[] = [
   {
     name: `Kroger Wireless`,
     icon: `/images/kroger-wireless-logo.svg`,
-    link: `https://play.google.com/store/apps/details?id=com.krogerwireless.myaccount&hl=en_US`
+    link: `/work/kroger-wireless`
   },
   {
     name: `Drees Homes`,
     icon: `/images/drees-logo.svg`,
-    link: 'https://dreeshomes.com/'
+    link: '/work/drees-homes'
   },
   {
     name: `EyeMed`,
     icon: `/images/eyemed-logo.svg`,
-    link: `https://landing.eyemed.com/`
+    link: `/work/eyemed`
   },
   {
     name: `M80`,
     icon: `/images/m80-logo.svg`,
-    link: `http://m80inc.com/`
+    link: `/work/m80`
   },
   {
     name: `IDD`,
     icon: `/images/idd-logo.png`,
-    link: `http://permitsmadepossible.com/`
+    link: `/work/idd`
   }
 ]

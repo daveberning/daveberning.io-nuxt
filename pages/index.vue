@@ -168,7 +168,7 @@
       }
 
       @media screen and (min-width: 1592px) {
-        margin-right: 4rem;
+        margin-right: 10rem;
       }
 
       @media screen and (min-width: 1760px) {
@@ -212,7 +212,7 @@
       }
 
       @media screen and (min-width: 1592px) {
-        left: 8rem;
+        left: 9rem;
       }
 
       @media screen and (min-width: 1760px) {

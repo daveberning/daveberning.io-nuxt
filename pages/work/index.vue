@@ -3,9 +3,9 @@
     <h1>Work</h1>
     <div class="is-grid has-col-6">
       <section class="is-col-3-sm is-col-2-lg" v-for="work in works" :key="work.name" :style="$store.getters.darkBkgColor">
-        <a :href="work.link">
+        <nuxt-link :to="work.link">
           <img :src="work.icon" :alt="work.alt">
-        </a>
+        </nuxt-link>
       </section>
       <section class="is-col-3-sm is-col-2-lg">
         <nuxt-link class="your-website" to="/contact">
