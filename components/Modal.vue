@@ -32,7 +32,6 @@
     },
     destroyed(): void {
       this.isActive = false
-      document.body.classList.remove(this.bodyClass)
     },
     methods: {
       getThemeColors
