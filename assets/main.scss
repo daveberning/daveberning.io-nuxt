@@ -89,7 +89,7 @@ h1, h2 {
   position: fixed;
   left: 0;
   transition: all .3s ease-in-out;
-  -webkit-backface-visibility: hidden;
+  backface-visibility: visible;
 }
 
 .slide-enter-to,

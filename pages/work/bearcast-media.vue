@@ -27,7 +27,7 @@
         <p>In in spring of 2019, I was awarded the Top Caliber Award for Outstanding Performance. This was presented
           by the Vice President of Marketing and the Systems Architect Manager (IT) during our annual meeting to
           reflect the hard work that I put in to the Drees Homes website and various "90th Anniversary" projects.</p>
-        <img src="~/assets/images/award.svg" alt="">
+        <img src="~/assets/images/award.svg">
       </template>
     </work-content>
   </modal-content>

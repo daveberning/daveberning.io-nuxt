@@ -132,7 +132,7 @@
       }
     }
 
-    img {
+    img:not([src*="svg"]) {
       border-radius: 50%;
       box-shadow: 0 .5em 1em -.125em rgba(10,10,10,.1),0 0 0 1px rgba(10,10,10,.02);
     }
