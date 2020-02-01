@@ -7,8 +7,7 @@
       </nuxt-link>
       <slot />
     </div>
-    <p class="right" :style="`color: ${getThemeColors($store.state.theme).backgroundDarker}`">Copyright &copy 2012 -
-      {{ new Date().getFullYear() }}. All Rights Reserved.</p>
+    <p class="right" :style="`color: ${getThemeColors($store.state.theme).backgroundDarker}`">Copyright &copy {{ new Date().getFullYear() }}. All Rights Reserved.</p>
   </div>
 </template>
 
