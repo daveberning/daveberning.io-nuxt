@@ -51,6 +51,10 @@
 </script>
 
 <style lang="scss">
+  .work + .is-grid {
+    grid-column-gap: 6rem;
+  }
+
   .work h1 {
     @media screen and (max-width: $md){
       text-align: center;

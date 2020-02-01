@@ -3,7 +3,15 @@
     <work-content title="Drees Homes" url="https://www.dreeshomes.com/">
       <template slot="default">
         <img class="img-responsive" src="~/assets/images/drees-homes.png" alt="">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod vestibulum molestie. In blandit euismod neque, non pharetra lectus vestibulum eu. Aliquam vel eleifend quam. Quisque consectetur ligula eget neque eleifend, vel mollis arcu ultrices. Curabitur gravida mi id sagittis varius. In ligula magna, fermentum vel venenatis at, mollis cursus augue. Ut faucibus malesuada libero, non ornare quam. Donec vitae vehicula erat, in convallis dolor. Nam in sodales quam, sit amet porttitor metus. Aenean egestas lorem tellus, non congue neque porta sed. Fusce ac ornare metus. Mauris vulputate ipsum at ipsum convallis, et pharetra purus tincidunt. Nam vel ullamcorper orci, id malesuada libero. Suspendisse tincidunt lorem arcu, sit amet scelerisque nibh dictum condimentum. Cras finibus placerat nisl et pellentesque. Mauris urna lectus, placerat ut varius quis, scelerisque ut nulla. </p>
+        <p>Drees Homes was founded in 1928. Since it's founding, it has grown into a multi-billion dollar private
+        business, building new homes across the United States. I was hired in the fall of 2016 as a front-end developer to build the front-end of their internal applications and maintain the company website.</p>
+
+        <p>During my time at Drees Homes, I modernized their front-end stack and created new libraries to expedite
+          development. Some of these technologies I helped adopted and explored are Vue.js, TypeScript, CSS Grid,
+          service workers, Jest, and more.</p>
+
+        <p>In addition to development, my responsibilities also included the designing of user interfaces and
+        creating solid user experiences for various department applications like Dream Builder.</p>
       </template>
       <template slot="side-content">
         <h3>Built With</h3>
@@ -17,13 +25,11 @@
           <p class="is-col-12 large" :style="$store.getters.darkBkgColor">Nuxt.js</p>
         </div>
         <h3>My Role</h3>
-        <p>I was the <strong>tech lead</strong> and <strong>lead front-end developer</strong> on this project. In this role, I was
-          responsible for weekly deployments and the development of the company website. As the tech lead, I
-          managed a small group of front-end developers, delegated their tasks, and performed bi-weekly code
-          reviews to maintain a high coding standard.</p>
+        <p>I was the <strong>tech lead</strong> and <strong>lead front-end developer</strong> on this project. In this role, I was responsible for
+          weekly deployments and development of the company website. As the tech lead, I managed a small group of front-end developers and delegated their tasks as well as my own. Part of our development process was bi-weekly code reviews, which I led to maintain a high coding standard.</p>
 
-        <p>This project was built with Nuxt.js, SCSS, TypeScript, and more. External TypeScript utility functions
-          were tested using Jest with 90% code coverage.</p>
+        <p>This project is built with Nuxt.js, SCSS, TypeScript, and more. External TypeScript utility functions were
+        tested using Jest with 90% code coverage.</p>
       </template>
       <template slot="testimonial">
         <theme-text class="is-bold" tag="h2">Top Caliber Award</theme-text>
