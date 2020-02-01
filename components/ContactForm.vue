@@ -63,6 +63,7 @@
     },
     computed: {
       isValidEmail() {
+        // @ts-ignore
         return !(this.form.email && !this.form.email.includes('@'))
       }
     },
@@ -71,8 +72,8 @@
         return Object.keys(data).map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`).join('&')
       },
       handleSubmit(): void {
-        const doesFormHaveValues = !!(this.form.firstName && this.form.lastName && this.form.email &&
-          this.form.message && this.isValidEmail)
+        // @ts-ignore
+        const doesFormHaveValues = !!(this.form.firstName && this.form.lastName && this.form.email && this.form.message && this.isValidEmail)
 
         if (doesFormHaveValues) {
           const axiosConfig: any = { header: { 'Content-Type': 'application/x-www-form-urlencoded' } }
