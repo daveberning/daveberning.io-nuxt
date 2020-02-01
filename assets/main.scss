@@ -1,4 +1,4 @@
-@import 'node_modules/@daveberning/griddle/src/scss/variables/breakpoints';
+@import 'node_modules/@daveberning/griddle/src/scss/variables.scss';
 
 @mixin generate_breakpoint_reporter {
   body:after {
@@ -29,7 +29,7 @@
   }
 }
 
-@include generate_breakpoint_reporter;
+// @include generate_breakpoint_reporter;
 
 body {
   width: 100vw;
@@ -127,3 +127,5 @@ h1, h2 {
 .is-bold {
   font-weight: bold;
 }
+
+@import 'variables';

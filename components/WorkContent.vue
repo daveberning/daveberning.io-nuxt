@@ -115,7 +115,7 @@
   img {
     max-width: 80%;
     display: block;
-    margin: 0 auto;
+    margin: 0 auto 2rem auto;
   }
 
   .testimonial {

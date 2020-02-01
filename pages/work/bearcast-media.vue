@@ -2,31 +2,40 @@
   <modal-content :is-inverted="true">
     <work-content title="Bearcast Media" url="https://www.dreeshomes.com/">
       <template slot="default">
-        <img class="img-responsive" src="~/assets/images/bearcast-media.png" alt="">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod vestibulum molestie. In blandit euismod neque, non pharetra lectus vestibulum eu. Aliquam vel eleifend quam. Quisque consectetur ligula eget neque eleifend, vel mollis arcu ultrices. Curabitur gravida mi id sagittis varius. In ligula magna, fermentum vel venenatis at, mollis cursus augue. Ut faucibus malesuada libero, non ornare quam. Donec vitae vehicula erat, in convallis dolor. Nam in sodales quam, sit amet porttitor metus. Aenean egestas lorem tellus, non congue neque porta sed. Fusce ac ornare metus. Mauris vulputate ipsum at ipsum convallis, et pharetra purus tincidunt. Nam vel ullamcorper orci, id malesuada libero. Suspendisse tincidunt lorem arcu, sit amet scelerisque nibh dictum condimentum. Cras finibus placerat nisl et pellentesque. Mauris urna lectus, placerat ut varius quis, scelerisque ut nulla. </p>
+        <img class="img-responsive" src="~/assets/images/bearcast-responsive.png" alt="">
+        <p>Bearcast Media is a media organization aimed at producing quality audio, visual, and digital content. It's
+        an entirely student-run organization and the official radio station of the University of Cincinnati. Some of
+          the work they do includes: broadcast video, broadcast radio, graphic design, web design, and video
+          productions. Students from all backgrounds and majors are encouraged to participate.</p>
+
+        <p>During a rebranding campaign, I was asked to join the team by then General Manager, Colin Lutz, to develop
+          the new Bearcast Media website. I worked closely with a designer Brett Valls to bring his branding
+          and vision a reality on the web.</p>
+
+        <p>The website was built with WordPress, so new students moving forward can create and maintain content. The
+             site is still in production today and is managed entirely by student volunteers. This project was
+          completed in the Winter of 2014.</p>
       </template>
       <template slot="side-content">
         <h3>Built With</h3>
         <div class="built-with is-grid">
           <p class="is-col-7" :style="$store.getters.darkBkgColor">HTML</p>
-          <p class="is-col-5 is-row-2" :style="$store.getters.darkBkgColor">PHP</p>
+          <p class="is-col-5 is-row-2 is-centered" :style="$store.getters.darkBkgColor">PHP</p>
           <p class="is-col-7" :style="$store.getters.darkBkgColor">SCSS</p>
           <p class="is-col-12 large" :style="$store.getters.darkBkgColor">Wordpress</p>
         </div>
         <h3>My Role</h3>
-        <p>I was the <strong>tech lead</strong> and <strong>lead front-end developer</strong> on this project. In this role, I was
-          responsible for weekly deployments and the development of the company website. As the tech lead, I
-          managed a small group of front-end developers, delegated their tasks, and performed bi-weekly code
-          reviews to maintain a high coding standard.</p>
+        <p>I was the <strong>New Media Director</strong> and <strong>developer</strong> for this project. In this role, making sure that the
+          development of the website continued smoothly and was completed on time was a top priority. As a Bearcast
+          Media director, I would manage a small team of developers and designers to ensure that the website
+          correctly reflected Brett's branding and vision.</p>
 
-        <p>This project was built with Nuxt.js, SCSS, TypeScript, and more. External TypeScript utility functions
-          were tested using Jest with 90% code coverage.</p>
+          <p>In the Spring of 2015, I was awarded Bearcast Media's Director of the Year as a reflection of my hard work put into this project.</p>
       </template>
       <template slot="testimonial">
         <theme-text class="is-bold" tag="h2">Director of the Year</theme-text>
-        <p>In in spring of 2019, I was awarded the Top Caliber Award for Outstanding Performance. This was presented
-          by the Vice President of Marketing and the Systems Architect Manager (IT) during our annual meeting to
-          reflect the hard work that I put in to the Drees Homes website and various "90th Anniversary" projects.</p>
+        <p>In the Spring of 2015, I was awarded Bearcast Media's Director of the Year as a reflection of my hard work
+          put into this project. This is the highest honor one can receive within the organization.</p>
         <img src="~/assets/images/award.svg">
       </template>
     </work-content>
@@ -48,5 +57,11 @@
 <style>
   img:last-child {
     width: 12rem;
+  }
+
+  .is-centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 </style>

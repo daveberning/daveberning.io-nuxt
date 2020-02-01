@@ -1,16 +1,29 @@
 <template>
-  <form class="is-grid has-col-2" v-if="formSubmitted === false" action="/contact" method="post" name="contact"
-        @submit.prevent="handleSubmit" netlify data-netlify-honeypot="bot-field">
-    <section class="is-col-1-md" v-for="field in fields" :key="field.id">
-      <label :for="field.id">{{ field.label }}</label>
-      <input :type="field.type" :id="field.id" :name="field.name" @input="bindFieldValue($event, field.name)" :style="$store.getters.lightBkgColor">
+  <form class="is-grid has-col-2 contact-form" v-if="formSubmitted === false" action="/contact" method="post"
+        name="contact" netlify data-netlify-honeypot="bot-field">
+    <section class="is-col-1-md is-grid has-col-2" v-for="field in fields" :key="field.id">
+      <label class="is-col-1" :for="field.id">{{ field.label }}</label>
+      <span class="is-col-1" v-if="formAttempt && !form[field.name] && field.required">Field is required</span>
+      <span class="is-col-1" v-if="formAttempt && !form[email] && field.required && !isValidEmail && field.name ===
+      'email'">Must be a valid
+        email</span>
+      <input class="is-col-2"
+             :type="field.type"
+             :id="field.id"
+             :name="field.name"
+             :required="field.required"
+             @input="ev => form[`${field.name}`] = ev.target.value"
+             :style="$store.getters.lightBkgColor">
     </section>
-    <section class="is-col-2">
-      <label for="message">Message</label>
-      <textarea id="message" rows="5" name="message" @input="bindFieldValue($event, 'message')"
-                :style="$store.getters.lightBkgColor" />
+    <section class="is-col-2 is-grid has-col-2">
+      <label class="is-col-1" for="message">Message *</label>
+      <span class="is-col-1" v-if="formAttempt && !form.message">Field is required</span>
+      <textarea class="is-col-2" id="message" rows="5" name="message"
+                @input="ev => form[`message`] = ev.target.value" :style="$store.getters.lightBkgColor"
+                :required="form.message.required" />
     </section>
-    <button type="submit" :style="$store.getters.darkBkgColor">Send</button>
+    <p class="is-col-2">* denotes a required field</p>
+    <button @click.prevent="handleSubmit" type="submit" :style="$store.getters.darkBkgColor">Send</button>
   </form>
   <div class="message" v-else>
     <div>
@@ -33,10 +46,10 @@
     data() {
       return {
         fields: [
-          { id: 'firstName', type: 'text', label: 'First Name', name: 'firstName' },
-          { id: 'lastName', type: 'text', label: 'Last Name', name: 'lastName' },
-          { id: 'phone', type: 'tel', label: 'Phone Number', name: 'phone' },
-          { id: 'email', type: 'email', label: 'Email Address', name: 'email' }
+          { id: 'firstName', type: 'text', label: 'First Name *', name: 'firstName', required: true, },
+          { id: 'lastName', type: 'text', label: 'Last Name *', name: 'lastName', required: true, },
+          { id: 'phone', type: 'tel', label: 'Phone Number', name: 'phone', required: false, },
+          { id: 'email', type: 'email', label: 'Email Address *', name: 'email', required: true, }
         ] as FormField[],
         form: {
           firstName: '',
@@ -45,57 +58,80 @@
           phone: '',
           message: ''
         } as FormModels,
-        formSubmitted: false as boolean
+        formSubmitted: false as boolean,
+        formAttempt: false as boolean
+      }
+    },
+    computed: {
+      isValidEmail() {
+        return !(this.form.email && !this.form.email.includes('@'))
       }
     },
     methods: {
-      bindFieldValue(e: any, fieldName: string): void {
-        // @ts-ignore
-        this.form[fieldName] = e.target.value
-      },
       encode(data: any): string {
         return Object.keys(data).map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`).join('&')
       },
       handleSubmit(): void {
-        const axiosConfig: any = {
-          header: { 'Content-Type': 'application/x-www-form-urlencoded' }
+        const doesFormHaveValues = !!(this.form.firstName && this.form.lastName && this.form.email &&
+          this.form.message && this.isValidEmail)
+
+        if (doesFormHaveValues) {
+          const axiosConfig: any = { header: { 'Content-Type': 'application/x-www-form-urlencoded' } }
+          axios.post('/', this.encode({'form-name': 'contact', ...this.form}), axiosConfig).then(() => this.formSubmitted = true)
+        } else {
+          this.formAttempt = true
         }
-        axios.post('/', this.encode({'form-name': 'contact', ...this.form}), axiosConfig)
-        .then(() => this.formSubmitted = true)
       }
     }
   })
 </script>
 
 <style lang="scss">
-  form button {
-    display: inline-block;
-    border: none;
-    background: darken(#3e9e91, 7%);
-    font-size: 2rem;
-    padding: 2rem;
-    text-align: center !important;
-    color: #ffffff !important;
-    border-radius: .25rem;
-  }
+  .contact-form {
+    button {
+      display: inline-block;
+      border: none;
+      background: darken(#3e9e91, 7%);
+      font-size: 2rem;
+      padding: 2rem;
+      text-align: center !important;
+      color: #ffffff !important;
+      border-radius: .25rem;
 
-  .message {
-    h2 { margin-bottom: 2rem; }
-    & > div { grid-column: span 4; }
-  }
+      &:hover { cursor: pointer; }
+    }
 
-  input,
-  label { display: block; }
+    .message {
+      h2 { margin-bottom: 2rem; }
+      & > div { grid-column: span 4; }
+    }
 
-  input,
-  textarea {
-    background: lighten(#a83c44, 6%);
-    padding: 1rem;
-    border-radius: .25rem;
-    border: 0;
-    margin-top: .5rem;
-    font-size: 2rem;
-    font-weight: 300;
-    width: 100%;
+    input,
+    label { display: block; }
+
+    input,
+    textarea {
+      background: lighten(#a83c44, 6%);
+      padding: 1rem;
+      border-radius: .25rem;
+      border: 0;
+      margin-top: .5rem;
+      font-size: 2rem;
+      font-weight: 300;
+      width: 100%;
+      font-family: inherit;
+    }
+
+    p,
+    span {
+      margin: 0;
+      font-size: 1rem;
+      font-style: italic;
+    }
+
+    span {
+      text-align: right !important;
+      color: var(--danger) !important;
+    }
   }
 </style>

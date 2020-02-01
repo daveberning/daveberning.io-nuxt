@@ -41,7 +41,7 @@ export default {
   modules: [ '@nuxtjs/style-resources' ],
   styleResources: {
     scss: [
-      '@daveberning/griddle/src/scss/variables/breakpoints.scss',
+      '@daveberning/griddle/src/scss/variables.scss',
     ]
   },
   build: {
