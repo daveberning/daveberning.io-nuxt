@@ -5,8 +5,7 @@
       <label class="is-col-1" :for="field.id">{{ field.label }}</label>
       <span class="is-col-1" v-if="formAttempt && !form[field.name] && field.required">Field is required</span>
       <span class="is-col-1" v-if="formAttempt && !form[email] && field.required && !isValidEmail && field.name ===
-      'email'">Must be a valid
-        email</span>
+      'email'">Must be a valid email</span>
       <input class="is-col-2"
              :type="field.type"
              :id="field.id"
