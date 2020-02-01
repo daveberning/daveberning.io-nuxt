@@ -51,6 +51,10 @@
 </script>
 
 <style lang="scss">
+  .inverted .close {
+    display: none;
+  }
+
   .work + .is-grid {
     grid-column-gap: 6rem;
   }
@@ -151,6 +155,15 @@
       border-radius: 100px;
 
       &:hover { cursor: pointer; }
+    }
+
+    a {
+      border: 2px solid;
+      border-radius: 100px;
+      padding: 1rem 1rem;
+      text-decoration: none;
+      display: inline-block;
+      margin: 0 auto;
     }
   }
 </style>

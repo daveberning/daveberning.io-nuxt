@@ -1,8 +1,10 @@
 <template>
-  <div class="modal" :class="[ { active: isActive }, { regular: !this.isInverted }]"
+  <div class="modal" :class="[ { active: isActive }, { regular: !this.isInverted },  { inverted: this.isInverted }]"
        :style="`background: ${backgroundColor}; color: ${textColor} !important;`">
     <div class="content" :class="{ regular: !this.isInverted }">
-      <router-link to="/" class="close"><img src="/images/cancel.svg" alt="Close"></router-link>
+      <nuxt-link to="/" class="close">
+        <img src="/images/cancel.svg" alt="Close">
+      </nuxt-link>
       <slot />
     </div>
     <p class="right" :style="`color: ${getThemeColors($store.state.theme).backgroundDarker}`">Copyright &copy 2012 -
