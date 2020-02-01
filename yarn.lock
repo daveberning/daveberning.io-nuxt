@@ -782,9 +782,9 @@
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
 "@daveberning/griddle@^0.3.0":
-  version "0.3.1"
-  resolved "https://npm.pkg.github.com/download/@daveberning/griddle/0.3.1/9fc367958b95a06a4e4cdc0222c83e04fe69bea2f0737ab3650ddfb59ded41fe#e4a1d218ddeb05526c0112a9ec641070b69ed885"
-  integrity sha512-3BHfX/tcoxAZ/eFCAnRDRiIog08kVoF+BF2+px7knN+7Gusw8Fj5hQSQ/b+zxt3RxJF+1V83CBzJJPjMWotPog==
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@daveberning/griddle/-/griddle-0.3.0.tgz#daac011ca999a6bd400b7c6d19231e6335937d2a"
+  integrity sha512-x0ttd3AxZj+b7hItBRcJswlRFY/ta8t8593WJGiYZEazAeAN3RaunHnOcFzI+Pln3Ort3LAe3PhGPP1wuJWiAA==
 
 "@jest/console@^24.7.1", "@jest/console@^24.9.0":
   version "24.9.0"
