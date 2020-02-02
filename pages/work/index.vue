@@ -48,9 +48,13 @@
   }
 
   section {
-    padding: 5rem 2rem;
+    padding: 3rem 0;
     border-radius: .25rem;
     display: flex;
+
+    @media screen and (min-width: $md) {
+      padding: 5rem 2rem;
+    }
 
     & > div { width: 100%; }
 

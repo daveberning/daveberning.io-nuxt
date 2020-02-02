@@ -3,7 +3,7 @@
        :style="`background: ${backgroundColor}; color: ${textColor} !important;`">
     <div class="content" :class="{ regular: !this.isInverted }">
       <nuxt-link to="/" class="close">
-        <img src="/images/cancel.svg" alt="Close">
+        <close-icon :use-theme-color="true" />
       </nuxt-link>
       <slot />
     </div>
@@ -13,11 +13,14 @@
 
 <script lang="ts">
   import Vue from 'vue'
-  import {VueInstance} from '@/types'
-  import {getThemeColors} from '@/data/theme-colors'
+  import CloseIcon from '~/components/CloseIcon.vue'
+  import { getThemeColors } from '@/data/theme-colors'
 
   export default Vue.extend({
     name: 'Modal' as string,
+    components: {
+      CloseIcon
+    },
     props: {
       isInverted: {
         type: Boolean as () => boolean,
@@ -91,17 +94,17 @@
       background: none;
       color: #ffffff;
       position: absolute;
-      top: 0;
+      top: -5px;
       right: -15px;
       padding: .5rem 1rem;
       z-index: 9999;
 
       @media screen and (min-width: $lg) {
         top: 15px;
-        right: 10px;
+        right: -1rem;
       }
 
-      img {
+      svg {
         width: 25px;
         height: 25px;
 
@@ -111,6 +114,8 @@
         }
       }
     }
+
+    .regular .close svg { fill: var(--white); }
 
     p {
       font-size: 1.25rem;

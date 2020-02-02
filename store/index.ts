@@ -32,7 +32,8 @@ const getters: GetterTree<State, State> = {
   borderColor: (state: State) => `border-color: ${getThemeColors(state.theme).background}`,
   bkgColor: (state: State) => `background: ${getThemeColors(state.theme).background}`,
   darkBkgColor: (state: State) => `background: ${getThemeColors(state.theme).backgroundDarker}`,
-  lightBkgColor: (state: State) => `background: ${getThemeColors(state.theme).backgroundLighter}`
+  lightBkgColor: (state: State) => `background: ${getThemeColors(state.theme).backgroundLighter}`,
+  color: (state: State) => getThemeColors(state.theme).textColorDark
 }
 
 const store = () => {

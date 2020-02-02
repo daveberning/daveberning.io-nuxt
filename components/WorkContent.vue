@@ -51,17 +51,13 @@
 </script>
 
 <style lang="scss">
-  .inverted .close {
-    display: none;
-  }
-
   .work h1 {
     @media screen and (max-width: $md){
       text-align: center;
     }
 
     @media screen and (max-width: $xl) {
-      font-size: 4rem !important;
+      font-size: 3rem !important;
       line-height: 7rem !important;
     }
   }
