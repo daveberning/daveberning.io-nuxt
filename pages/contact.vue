@@ -4,7 +4,7 @@
     <div class="is-grid">
       <contact-form class="is-col-7-lg" />
       <ul class="is-col-5-lg is-grid has-col-2">
-        <li class="is-col-1" v-for="media in socialMedia" :key="media.icon" :style="$store.getters.darkBkgColor">
+        <li class="is-col-1-md" v-for="media in socialMedia" :key="media.icon" :style="$store.getters.darkBkgColor">
           <a :href="media.href">
             <i :class="`fab fa-${media.icon}`" />
           </a>
