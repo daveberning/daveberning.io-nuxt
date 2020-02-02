@@ -21,6 +21,7 @@
     },
     computed: {
       iconColor(): string {
+        // @ts-ignore
         return this.useThemeColor ? this.color : this.$store.getters.color
       }
     }
