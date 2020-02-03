@@ -2,7 +2,7 @@
   <modal-content :is-inverted="true">
     <work-content title="M80, Inc." url="http://m80inc.com/">
       <template slot="default">
-        <img class="img-responsive" src="~/assets/images/m80inc.png" alt="">
+        <img class="img-responsive" src="~/assets/images/m80inc.png" alt="The M80 website on various devices">
         <p>M80, Inc is a product design company located in Cincinnati, OH. They are known for breaking the status quo
           and working in unconventional ways to develop the best product for their clients. Some of their product design work includes: Gorilla Shipping Tape, Tic-Tac Chill, Chapstick Duo, and Barilla Sauce Jar.</p>
 

@@ -3,7 +3,8 @@
     <div class="is-grid work">
       <theme-text tag="h1" class="is-col-7-md is-col-8-xl">{{ title }}</theme-text>
       <div class="is-col-5-md is-col-4-xl link">
-        <a :href="url" :style="`${$store.getters.darkTextColor}; ${$store.getters.darkBorderColor}`">{{ urlText }}</a>
+        <a :href="url" target="_blank"
+           :style="`${$store.getters.darkTextColor}; ${$store.getters.darkBorderColor}`">{{ urlText }}</a>
         <nuxt-link to="/work" :style="`${$store.getters.darkTextColor};`">View More Work</nuxt-link>
       </div>
     </div>

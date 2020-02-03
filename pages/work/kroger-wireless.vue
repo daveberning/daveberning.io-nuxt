@@ -1,8 +1,9 @@
 <template>
   <modal-content :is-inverted="true">
-    <work-content title="Kroger Wireless" url="https://www.dreeshomes.com/" url-text="View in Store">
+    <work-content title="Kroger Wireless" url="https://play.google.com/store/apps/details?id=com.krogerwireless.myaccount&hl=en_US" url-text="View in Store">
       <template slot="default">
-        <img class="img-responsive" src="~/assets/images/kroger-wireless.png" alt="">
+        <img class="img-responsive" src="~/assets/images/kroger-wireless.png"
+             alt="Various screens of the Kroger Wireless App">
         <p>Kroger Wireless (formally i-Wireless) is the phone plan provider of Kroger, the nationwide grocery chain.
                 There are many brands under the Kroger Family, which include: Kroger, King Soopers, Pay Less Super
           Markets, Fred Meyers, and more. Kroger Wireless provides affordable phone plans under the Sprint network.</p>

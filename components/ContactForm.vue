@@ -27,7 +27,7 @@
   <div class="message" v-else>
     <div>
       <h2>Thanks for the message, {{ form.firstName }}!</h2>
-      <p>We will be in touch shortly. In the mean time, please
+      <p>I will be in touch with you shortly. In the mean time, please
         <nuxt-link to="/writing">read some of my writing</nuxt-link>
         or
         <nuxt-link to="/work">take a look at some of my work.</nuxt-link>
@@ -101,11 +101,6 @@
       &:hover { cursor: pointer; }
     }
 
-    .message {
-      h2 { margin-bottom: 2rem; }
-      & > div { grid-column: span 4; }
-    }
-
     input,
     label { display: block; }
 
@@ -134,4 +129,6 @@
       color: var(--danger) !important;
     }
   }
+
+  .message h2 { margin-bottom: 2rem !important; }
 </style>

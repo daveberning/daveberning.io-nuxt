@@ -1,8 +1,9 @@
 <template>
   <modal-content :is-inverted="true">
-    <work-content title="Bearcast Media" url="https://www.dreeshomes.com/">
+    <work-content title="Bearcast Media" url="http://www.bearcastmedia.com/">
       <template slot="default">
-        <img class="img-responsive" src="~/assets/images/bearcast-responsive.png" alt="">
+        <img class="img-responsive" src="~/assets/images/bearcast-responsive.png"
+             alt="The Bearcast Media website on various devices">
         <p>Bearcast Media is a media organization aimed at producing quality audio, visual, and digital content. It's
         an entirely student-run organization and the official radio station of the University of Cincinnati. Some of
           the work they do includes: broadcast video, broadcast radio, graphic design, web design, and video

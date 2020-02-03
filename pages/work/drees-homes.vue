@@ -2,7 +2,8 @@
   <modal-content :is-inverted="true">
     <work-content title="Drees Homes" url="https://www.dreeshomes.com/">
       <template slot="default">
-        <img class="img-responsive" src="~/assets/images/drees-homes.png" alt="">
+        <img class="img-responsive" src="~/assets/images/drees-homes.png"
+             alt="The Drees Homes website on various devices">
         <p>Drees Homes was founded in 1928. Since it's founding, it has grown into a multi-billion dollar private
         business, building new homes across the United States. I was hired in the fall of 2016 as a front-end developer to build the front-end of their internal applications and maintain the company website.</p>
 
