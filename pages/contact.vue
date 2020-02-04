@@ -36,6 +36,7 @@
 <style lang="scss" scoped>
   li {
     padding: 5rem;
+    border-radius: .25rem;
 
     i {
       font-size: 4rem;
@@ -44,7 +45,6 @@
   }
 
   li a {
-    border-radius: .25rem;
     color: #ffffff;
     position: absolute;
     z-index: 9999;
