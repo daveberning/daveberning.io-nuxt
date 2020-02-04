@@ -35,15 +35,23 @@
   .your-website {
     text-decoration: none;
     font-weight: 900;
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
 
+    @media screen and (min-width: $md) {
+      font-size: 2rem;
+    }
+
     span {
       text-align: center;
-      line-height: 3rem;
+      line-height: 2.25rem;
+
+      @media screen and (min-width: $md) {
+        line-height: 3rem;
+      }
     }
   }
 
@@ -64,9 +72,22 @@
     }
 
     a {
-      width: 70%;
+      width: 15rem;
       display: flex;
       margin: 0 auto;
+      max-height: 6rem !important;
+
+      @media screen and (min-width: $md) {
+        max-height: 11rem !important;
+      }
+
+      @media screen and (min-width: $lg) {
+        width: 13rem;
+      }
+
+      @media screen and (min-width: $xxl) {
+        width: 16rem;
+      }
     }
 
     img {
@@ -74,6 +95,11 @@
       height: auto;
       display: block;
       margin: 0 auto;
+      max-width: 11rem;
+
+      @media screen and (min-width: $md) {
+        max-width: 20rem;
+      }
     }
   }
 </style>
