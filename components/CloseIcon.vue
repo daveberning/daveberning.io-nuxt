@@ -14,9 +14,9 @@
   export default Vue.extend({
     props: {
       useThemeColor: {
-        Type: String as () => string,
-        required: false,
-        default: '#fff'
+        type: String as () => string,
+        required: false as boolean,
+        default: '#fff' as string
       }
     },
     computed: {

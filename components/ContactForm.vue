@@ -62,7 +62,7 @@
       }
     },
     computed: {
-      isValidEmail() {
+      isValidEmail(): boolean {
         // @ts-ignore
         return !(this.form.email && !this.form.email.includes('@'))
       }

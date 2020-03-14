@@ -35,6 +35,7 @@
       }
     },
     destroyed(): void {
+      // @ts-ignore
       this.isActive = false
     },
     methods: {
@@ -49,6 +50,7 @@
       }
     },
     mounted(): void {
+      // @ts-ignore
       this.isActive = true
     }
   })

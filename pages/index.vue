@@ -65,7 +65,7 @@
           self.$router.push('/contact')
         } // Shift + C
       })
-    }
+    },
   })
 </script>
 

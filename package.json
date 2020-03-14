@@ -5,10 +5,10 @@
   "author": "Dave Berning",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
+    "dev": "node -r ts-node/register node_modules/nuxt/bin/nuxt dev -c nuxt.config.ts",
+    "build": "node -r ts-node/register node_modules/nuxt/bin/nuxt build -c nuxt.config.ts",
+    "generate": "node -r ts-node/register node_modules/nuxt/bin/nuxt generate -c nuxt.config.ts",
     "start": "nuxt start",
-    "generate": "nuxt generate",
     "test": "jest"
   },
   "dependencies": {
@@ -27,6 +27,8 @@
     "@vue/test-utils": "^1.0.0-beta.27",
     "babel-jest": "^24.1.0",
     "jest": "^24.1.0",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.8.3",
     "vue-jest": "^4.0.0-0"
   }
 }

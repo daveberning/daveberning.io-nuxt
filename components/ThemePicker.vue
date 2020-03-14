@@ -8,12 +8,13 @@
 
 <script lang="ts">
   import Vue from 'vue'
-  import {listOfThemes} from '@/data/theme-colors'
+  import { listOfThemes } from '@/data/theme-colors'
+  import { ThemeSwatch } from '~/types/theme'
 
   export default Vue.extend({
     data() {
       return {
-        listOfThemes
+        listOfThemes: listOfThemes as ThemeSwatch[]
       }
     },
     methods: {

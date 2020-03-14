@@ -17,7 +17,7 @@
     props: {
       socialMedia: {
         type: Array as () => SocialMedia[],
-        required: true,
+        required: true as boolean,
       }
     },
     computed: {

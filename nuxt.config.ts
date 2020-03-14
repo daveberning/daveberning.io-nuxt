@@ -45,6 +45,6 @@ export default {
     ]
   },
   build: {
-    extend(config, ctx) {}
+    extend(config: any, ctx: any) {}
   }
 }

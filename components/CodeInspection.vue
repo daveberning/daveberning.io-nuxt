@@ -39,10 +39,10 @@
         return bowser.getParser(window.navigator.userAgent).getBrowserName()
       }
     },
-    destroyed() {
+    destroyed(): void {
       window.removeEventListener('keyup', this.keyboardActions)
     },
-    mounted() {
+    mounted(): void {
       window.addEventListener('keyup', this.keyboardActions)
     }
   })

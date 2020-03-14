@@ -35,17 +35,17 @@
     props: {
       url: {
         type: String as () => string,
-        required: false,
-        default: ''
+        required: false as boolean,
+        default: '' as string
       },
       urlText: {
         type: String as () => string,
-        required: false,
-        default: 'Visit Website'
+        required: false as boolean,
+        default: 'Visit Website' as string
       },
       title: {
         type: String as () => string,
-        required: true,
+        required: true as boolean,
       }
     }
   })

@@ -43,12 +43,13 @@
   import Vue from 'vue'
   import { uses } from '~/data/uses'
   import { getThemeColors } from '~/data/theme-colors'
+  import { Uses } from '~/types'
 
   export default Vue.extend({
     name: 'Uses' as string,
     data() {
       return {
-        uses
+        uses: uses as Uses
       }
     },
     computed: {

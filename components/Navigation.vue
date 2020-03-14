@@ -21,7 +21,7 @@
     props: {
       navigation: {
         type: Array as () => NavigationItem[],
-        required: true
+        required: true as boolean
       },
     },
   })

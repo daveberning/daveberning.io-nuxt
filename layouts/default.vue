@@ -11,25 +11,25 @@
   import CodeInspection from '~/components/CodeInspection.vue'
 
   export default Vue.extend({
-    transition: 'slide',
+    transition: 'slide' as string,
     components: {
       ThemePicker,
       CodeInspection
     },
     data() {
       return {
-        contextMenuActive: false,
+        contextMenuActive: false as boolean,
       }
     },
     methods: {
-      openCodeInspectionNotice(e: Event) {
+      openCodeInspectionNotice(e: Event): void {
         if (!this.$store.state.inspectionNotice) {
           e.preventDefault()
           this.contextMenuActive = true
         }
       }
     },
-    mounted() {
+    mounted(): void {
       this.$store.dispatch('dismissCodeInspectionNotice', false)
     },
   })
