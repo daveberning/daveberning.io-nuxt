@@ -19,7 +19,8 @@
     "node-sass": "^4.13.1",
     "number-to-words": "^1.2.4",
     "nuxt": "^2.0.0",
-    "sass-loader": "^8.0.2"
+    "sass-loader": "^8.0.2",
+    "ts-loader": "^6.2.2"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^0.1.11",
