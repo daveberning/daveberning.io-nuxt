@@ -21,9 +21,4 @@ export const works: Work[] = [
     icon: `/images/m80-logo.svg`,
     link: `/work/m80`
   },
-  {
-    name: `Bearcast Media`,
-    icon: `/images/bearcast-logo.svg`,
-    link: `/work/bearcast-media`
-  }
 ]
