@@ -8,7 +8,7 @@
         <ul class="is-grid has-col-2">
           <li class="is-col-1" :style="$store.getters.textColor">{{ writing.date }}</li>
           <li class="is-col-1">
-            <span :class="{ book: isBook(writing) }" :style="isBook(writing) ? bookButtonStyles : $store.getters.textColor">
+            <span :class="{ book: isBook(writing) }" :style="isBook(writing) ? bookButtonStyles : ``">
               {{ isBook(writing) ? 'Buy Book' : writing.type }}
             </span>
           </li>
@@ -70,7 +70,7 @@
     }
 
     ul li,
-    ul li span { color: lighten(#3e9e91, 20%); }
+    ul li span { color: #fff !important; }
 
     ul li {
       margin: 2rem 0 0 0;
@@ -88,4 +88,5 @@
     color: #ffffff;
     border-radius: 4px;
   }
+
 </style>
