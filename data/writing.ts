@@ -19,36 +19,36 @@ export const writing: Writing[] = [
     title: `Using TypeScript with Vue Single File Components`,
     date: `September 3, 2019`,
     featured: false,
-    type: `Alligator.io`,
-    to: `https://alligator.io/vuejs/using-typescript-with-vue/`
+    type: `Digital Ocean`,
+    to: `https://www.digitalocean.com/community/tutorials/vuejs-using-typescript-with-vue`
   },
   {
     title: `Getting Started with Server-Side Rendering Using Nuxt.js`,
     date: `April 16, 2018`,
     featured: false,
-    type: `Alligator.io`,
-    to: `https://alligator.io/vuejs/server-side-rendering-with-nuxtjs/`
+    type: `Digital Ocean`,
+    to: `https://www.digitalocean.com/community/tutorials/vuejs-server-side-rendering-with-nuxtjs`
   },
   {
     title: `Implementing an Infinite Scroll with Vue.js`,
     date: `April 3, 2018`,
     featured: false,
-    type: `Alligator.io`,
-    to: `https://alligator.io/vuejs/implementing-infinite-scroll/`
+    type: `Digital Ocean`,
+    to: `https://www.digitalocean.com/community/tutorials/vuejs-implementing-infinite-scroll`
   },
   {
     title: `Integrating and Using CSS Frameworks with Vue.js`,
     date: `April 1, 2018`,
     featured: false,
-    type: `Alligator.io`,
-    to: `https://alligator.io/vuejs/css-frameworks-vuejs/`
+    type: `Digital Ocean`,
+    to: `https://www.digitalocean.com/community/tutorials/vuejs-css-frameworks-vuejs`
   },
   {
     title: `Using Chart.js with Vue.js`,
     date: `January 28, 2018`,
     featured: false,
-    type: `Alligator.io`,
-    to: `https://alligator.io/vuejs/vue-chart-js/`
+    type: `Digital Ocean`,
+    to: `https://www.digitalocean.com/community/tutorials/vuejs-vue-chart-js`
   },
   {
     title: `Importing Global Libraries into Vue CLI (The Clean Way)`,
