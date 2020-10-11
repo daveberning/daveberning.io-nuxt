@@ -26,7 +26,7 @@ export default {
       { src: 'https://kit.fontawesome.com/8347ef088f.js' }
     ]
   },
-  loading: {color: '#348479'},
+  loading: { color: '#348479' },
   css: [ '@daveberning/griddle/dist/grid.css', '~/assets/main.scss' ],
   plugins: [
     '~/plugins/global-components'
@@ -41,10 +41,11 @@ export default {
   modules: [ '@nuxtjs/style-resources' ],
   styleResources: {
     scss: [
-      '@daveberning/griddle/src/scss/variables.scss',
+      '@daveberning/griddle/src/scss/variables.scss'
     ]
   },
   build: {
-    extend(config: any, ctx: any) {}
+    extend(config: any, ctx: any) {
+    }
   }
 }
