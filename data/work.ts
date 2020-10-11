@@ -1,4 +1,4 @@
-import {Work} from '@/types'
+import { Work } from '@/types'
 
 export const works: Work[] = [
   {
@@ -20,10 +20,5 @@ export const works: Work[] = [
     name: `M80`,
     icon: `/images/m80-logo.svg`,
     link: `/work/m80`
-  },
-  {
-    name: `Bearcast Media`,
-    icon: `/images/bearcast-logo.svg`,
-    link: `/work/bearcast-media`
   }
 ]
