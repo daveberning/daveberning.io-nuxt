@@ -87,7 +87,7 @@ export default Vue.extend({
     line-height: 7rem;
 
     @media screen and (min-width: $lg) {
-      font-size: 7rem;
+      font-size: 6rem;
       line-height: 11rem;
     }
   }

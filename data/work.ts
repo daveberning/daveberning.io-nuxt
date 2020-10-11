@@ -1,4 +1,4 @@
-import {Work} from '@/types'
+import { Work } from '@/types'
 
 export const works: Work[] = [
   {
