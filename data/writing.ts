@@ -1,4 +1,4 @@
-import {Writing} from '@/types'
+import { Writing } from '@/types'
 
 export const writing: Writing[] = [
   {
@@ -14,6 +14,13 @@ export const writing: Writing[] = [
     featured: true,
     type: `Book`,
     to: `https://www.amazon.com/Creating-Interfaces-Bulma-Jeremy-Thomas-ebook/dp/B079M1BJG4/ref=sr_1_1?keywords=creating+interfaces+with+bulma&qid=1566873504&s=books&sr=1-1`
+  },
+  {
+    title: `Integrating and Using CSS Frameworks with Vue.js`,
+    date: `Updated: October 12, 2020`,
+    featured: false,
+    type: `Digital Ocean`,
+    to: `https://www.digitalocean.com/community/tutorials/vuejs-css-frameworks-vuejs`
   },
   {
     title: `Using TypeScript with Vue Single File Components`,
@@ -35,13 +42,6 @@ export const writing: Writing[] = [
     featured: false,
     type: `Digital Ocean`,
     to: `https://www.digitalocean.com/community/tutorials/vuejs-implementing-infinite-scroll`
-  },
-  {
-    title: `Integrating and Using CSS Frameworks with Vue.js`,
-    date: `April 1, 2018`,
-    featured: false,
-    type: `Digital Ocean`,
-    to: `https://www.digitalocean.com/community/tutorials/vuejs-css-frameworks-vuejs`
   },
   {
     title: `Using Chart.js with Vue.js`,
