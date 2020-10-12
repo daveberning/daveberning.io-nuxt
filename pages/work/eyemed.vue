@@ -3,7 +3,8 @@
     <work-content title="EyeMed Member Portal" url="https://member.eyemedvisioncare.com/#/member/en"
                   url-text="View Portal">
       <template slot="default">
-        <img class="img-responsive" src="~/assets/images/eyemed.png" alt="EyeMed landing page on various devices.">
+        <img class="img-responsive" src="~/assets/images/eyemed-mem-web.jpg"
+             alt="EyeMed landing page on various devices.">
         <p>EyeMed is America's fastest-growing vision benefits company and located in Greater Cincinnati. They
           have a diverse and expansive network across the United States, including private doctors and national
           providers like LensCrafters®, Pearle Vision®, and Target Optical®. They are a part of Luxottica of America
@@ -90,5 +91,9 @@ export default Vue.extend({
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+img {
+  max-width: 750px;
 }
 </style>

@@ -45,6 +45,7 @@ export default Vue.extend({
       if (process.client) {
         const workPageRegex: RegExp = new RegExp(/\/work\/(.+)/g)
         const isProjectPage: boolean = workPageRegex.test(window.location.href)
+
         if (isProjectPage) {
           this.$router.push({ path: '/work' })
         } else {
