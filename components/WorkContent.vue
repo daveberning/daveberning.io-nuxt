@@ -61,9 +61,14 @@ export default Vue.extend({
     text-align: center;
   }
 
+  @media screen and (min-width: $xl) {
+    font-size: 5rem !important;
+    line-height: 7rem !important;
+  }
+
   @media screen and (max-width: $xl) {
     font-size: 3rem !important;
-    line-height: 7rem !important;
+    line-height: 4rem !important;
   }
 }
 

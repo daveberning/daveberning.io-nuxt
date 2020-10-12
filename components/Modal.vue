@@ -76,9 +76,11 @@ export default Vue.extend({
   padding: 1rem;
   overflow: auto;
   z-index: 10000;
+
   @media screen and (min-width: 768px) {
     padding: 2rem;
   }
+
   @media screen and (min-width: 1200px) {
     padding: 2rem 4rem;
   }
@@ -86,6 +88,7 @@ export default Vue.extend({
   h1 {
     font-size: 4rem;
     line-height: 7rem;
+    margin-bottom: 1rem;
 
     @media screen and (min-width: $lg) {
       font-size: 6rem;
