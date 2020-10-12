@@ -41,10 +41,10 @@ export default Vue.extend({
   },
   methods: {
     getThemeColors,
-    getRoute(): vouid {
+    getRoute(): void {
       if (process.client) {
         const workPageRegex: RegExp = new RegExp(/\/work\/(.+)/g)
-        const isProjectPage: boolean = workPageRegex.test(window.location)
+        const isProjectPage: boolean = workPageRegex.test(window.location.href)
         if (isProjectPage) {
           this.$router.push({ path: '/work' })
         } else {
