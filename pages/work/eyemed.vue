@@ -82,6 +82,13 @@ export default Vue.extend({
     return {
       works: works as Work[]
     }
+  },
+  head() {
+    return {
+      title: 'EyeMed Member Portal | Dave Berning | Cincinnati, OH',
+      description:
+        `As part of a recent push to provide customers with a variety of online tools, Oodle was contracted out to develop their "Member Web Portal". This online portal provides EyeMed customers the ability to view their plan, update dependencies, find an nearby eye doctor, and more.`
+    }
   }
 })
 </script>

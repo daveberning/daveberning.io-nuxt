@@ -30,9 +30,9 @@ export default Vue.extend({
   },
   head() {
     return {
-      title: 'About | Web Developer | Dave Berning | Cincinnati, OH',
+      title: 'About | Software Engineer | Dave Berning | Cincinnati, OH',
       description:
-        `Dave Berning is a web developer from Cincinnati, Ohio. Since 2013, Dave has worked with several national and local companies through a range of projects. Dave is also a mentor and author, writing for Digital Ocean and Bleeding Edge Press.`
+        `Dave Berning is a software engineer from Cincinnati, Ohio. Since 2013, Dave has worked with several national and local companies through a range of projects. Dave is also a mentor and author, writing for Digital Ocean and Bleeding Edge Press.`
     }
   }
 })

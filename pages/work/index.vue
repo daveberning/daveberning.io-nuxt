@@ -31,9 +31,9 @@ export default Vue.extend({
   },
   head() {
     return {
-      title: 'Work | Web Developer | Dave Berning | Cincinnati, OH',
+      title: 'Work | Software Engineer | Dave Berning | Cincinnati, OH',
       description:
-        `Dave Berning is a web developer from Cincinnati, Ohio. He has worked alongside national companies such as Kroger Wireless, EyeMed, and Drees Homes. Outside of his day job, he works as a freelance developer working with local companies and organizations.`
+        `Dave Berning is a software engineer from Cincinnati, Ohio. He has worked alongside national companies such as Kroger Wireless, EyeMed, and Drees Homes. Outside of his day job, he works as a freelance developer working with local companies and organizations.`
     }
   }
 })

@@ -65,7 +65,7 @@ export default Vue.extend({
   },
   head() {
     return {
-      title: 'Drees Homes | Web Developer | Cincinnati, OH',
+      title: 'Drees Homes | Software Engineer | Cincinnati, OH',
       description:
         `Drees Homes is a mutil-billion dollar private business location in Greater Cincinnati. During my tenure, I have modernized their front-end stack and created new libraries to expedite development. Some of these technologies I helped adopted and explored are Vue.js, TypeScript, CSS Grid, service workers, Jest, and more`
     }

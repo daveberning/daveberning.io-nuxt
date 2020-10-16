@@ -10,7 +10,7 @@ function years(): string {
 export const about: About = {
   firstName: 'Dave',
   lastName: 'Berning',
-  role: 'Developer & Author',
+  role: 'Software Engineer & Author',
   city: 'Cincinnati',
   state: 'Ohio',
   almaMaterLogo: `/images/university-of-cincinnati-vector-logo.svg`,

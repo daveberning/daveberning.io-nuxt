@@ -1,7 +1,7 @@
 export default {
   mode: 'universal',
   head: {
-    title: `Dave Berning | Web Developer | Cincinnati, OH`,
+    title: `Dave Berning | Software Engineer| Cincinnati, OH`,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
