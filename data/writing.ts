@@ -16,6 +16,13 @@ export const writing: Writing[] = [
     to: `https://www.amazon.com/Creating-Interfaces-Bulma-Jeremy-Thomas-ebook/dp/B079M1BJG4/ref=sr_1_1?keywords=creating+interfaces+with+bulma&qid=1566873504&s=books&sr=1-1`
   },
   {
+    title: `How To Generate a Vue.js Single Page App With the Vue CLI`,
+    date: `January 11, 2021`,
+    featured: false,
+    type: `Digital Ocean`,
+    to: `https://www.digitalocean.com/community/tutorials/how-to-generate-a-vue-js-single-page-app-with-vue-create`
+  },
+  {
     title: `Integrating and Using CSS Frameworks with Vue.js`,
     date: `Updated: October 12, 2020`,
     featured: false,
