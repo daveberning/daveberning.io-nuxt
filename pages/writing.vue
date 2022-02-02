@@ -1,15 +1,21 @@
 <template>
   <modal-content>
     <h1>Writing</h1>
+    <p>{{ numberOfArticles }} Articles / {{ numberOfBooks }} Books</p>
     <div class="is-grid">
-      <a class="is-col-6-md is-col-4-xl" v-for="(writing, i) in writings" :key="i" :href="writing.to"
-         :style="$store.getters.darkBkgColor">
+      <a
+        v-for="(writing, i) in writings"
+        :key="i"
+        :href="writing.to"
+        :style="$store.getters.darkBkgColor"
+        class="is-col-6-md is-col-4-xl">
         <h2>{{ writing.title }}</h2>
         <ul class="is-grid has-col-2">
-          <li class="is-col-1" :style="$store.getters.textColor">{{ writing.date }}</li>
+          <li :style="$store.getters.textColor" class="is-col-1">{{ writing.date }}</li>
           <li class="is-col-1">
-            <span :class="{ book: isBook(writing) }"
-                  :style="isBook(writing) ? bookButtonStyles : $store.getters.textColor">
+            <span
+              :class="{ book: isBook(writing) }"
+              :style="isBook(writing) ? bookButtonStyles : $store.getters.textColor">
               {{ isBook(writing) ? 'Buy Book' : writing.type }}
             </span>
           </li>
@@ -35,6 +41,12 @@ export default Vue.extend({
   computed: {
     bookButtonStyles(): string {
       return `background: ${getThemeColors(this.$store.state.theme).background}`
+    },
+    numberOfBooks(): number {
+      return this.writings.filter(writing => writing.type === 'Book')?.length || 0
+    },
+    numberOfArticles(): number {
+      return this.writings.filter(writing => writing.type !== 'Book')?.length || 0
     }
   },
   methods: {
@@ -55,8 +67,8 @@ export default Vue.extend({
 <style lang="scss" scoped>
 a {
   padding: 2rem 2rem 2.5rem 2rem;
-  border-radius: 4px;
   text-decoration: none;
+  border-radius: 4px;
 
   h2 {
     font-size: 1.25rem;
@@ -70,21 +82,23 @@ a {
   }
 
   ul {
-    padding: 0 2rem;
     position: absolute !important;
     bottom: 1rem;
-    width: 100%;
     left: 0;
+    width: 100%;
+    padding: 0 2rem;
   }
 
-    ul li,
-    ul li span { color: #fff !important; }
+  ul li,
+  ul li span {
+    color: #ffffff !important;
+  }
 
   ul li {
-    margin: 2rem 0 0 0;
     font-style: italic;
     display: flex;
     align-self: center;
+    margin: 2rem 0 0 0;
 
     &:last-child {
       justify-self: end;
@@ -92,12 +106,17 @@ a {
   }
 }
 
-  .book {
-    background: #3e9e91;
-    display: inline-block;
-    padding: .5rem 1rem;
-    color: #ffffff;
-    border-radius: 4px;
-  }
+.book {
+  display: inline-block;
+  padding: .5rem 1rem;
+  color: #ffffff;
+  border-radius: 4px;
+  background: #3e9e91;
+}
 
+p {
+  font-size: 1.25rem;
+  margin: 0;
+  text-align: right !important;
+}
 </style>

@@ -35,16 +35,44 @@ const purpleTheme: Theme = {
   textColorDark: `#2a1e2b`
 }
 
+const bengalsTheme: Theme = {
+  background: lightenDarkenColor('#cb653a', 0),
+  backgroundDarker: lightenDarkenColor('#cb653a', -20), // darken 7% of background color
+  backgroundLighter: lightenDarkenColor('#cb653a', 15), // Lighten 6% of background color
+  textColorDark: `#000000`
+}
+
 export const listOfThemes: ThemeSwatch[] = [ // Order of swatches
-  { name: 'default', color: defaultTheme.background },
-  { name: 'green', color: greenTheme.background },
-  { name: 'blue', color: blueTheme.background },
-  { name: 'purple', color: purpleTheme.background },
-  { name: 'red', color: redTheme.background }
+  {
+    name: 'bengals',
+    color: bengalsTheme.background,
+    image: 'bengals-logo.svg',
+  },
+  {
+    name: 'default',
+    color: defaultTheme.background
+  },
+  {
+    name: 'green',
+    color: greenTheme.background
+  },
+  {
+    name: 'blue',
+    color: blueTheme.background
+  },
+  {
+    name: 'purple',
+    color: purpleTheme.background
+  },
+  {
+    name: 'red',
+    color: redTheme.background
+  }
 ]
 
 export function getThemeColors(theme: string): Theme {
   if (theme === 'red') return redTheme
+  else if (theme === 'bengals') return bengalsTheme
   else if (theme === 'green') return greenTheme
   else if (theme === 'blue') return blueTheme
   else if (theme === 'purple') return purpleTheme

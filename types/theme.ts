@@ -8,4 +8,5 @@ export interface Theme {
 export interface ThemeSwatch {
   name: string,
   color: string
+  image?: string
 }

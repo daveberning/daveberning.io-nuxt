@@ -3,17 +3,22 @@
     <div class="wrapper">
       <div class="content">
         <picture>
-          <source ref="image" :srcset="`images/compressed/dave-optimized-sm-${$store.state.theme}.jpg`"
-                  media="(min-width: 1335px)">
-          <img src="images/dave-mobile.jpg" alt="PP">
+          <source
+            ref="image"
+            :srcset="`images/compressed/dave-optimized-sm-${$store.state.theme}.jpg`"
+            media="(min-width: 1335px)">
+          <img alt="PP" src="images/dave-mobile.jpg">
         </picture>
         <div>
           <theme-text tag="h1">{{ about.firstName }} {{ about.lastName }}</theme-text>
           <theme-text tag="h2">{{ about.role }} from {{ about.city }}, {{ about.state }}</theme-text>
-          <theme-text tag="p" class="left">
-            Photography by <a href="http://jmanstudios.com" target="_blank" :style="`${$store.getters.darkTextColor};`">Jason Bayer</a>
+          <theme-text class="left" tag="p">
+            Photography by
+            <a :style="`${$store.getters.darkTextColor};`" href="http://jmanstudios.com" target="_blank">Jason Bayer</a>
           </theme-text>
-          <theme-text tag="p" class="right">Copyright &copy {{ new Date().getFullYear() }}. All Rights Reserved.</theme-text>
+          <theme-text class="right" tag="p">
+            Copyright &copy {{ new Date().getFullYear() }}. All Rights Reserved.
+          </theme-text>
           <navigation :navigation="navigation" />
           <social-media-icons :social-media="socialMedia" />
         </div>
@@ -112,10 +117,10 @@ h2 {
 }
 
 p {
-  position: absolute;
   font-size: .75rem;
-  color: #cccccc;
+  position: absolute;
   bottom: 1rem;
+  color: #cccccc;
 }
 
 p.left {
@@ -128,12 +133,12 @@ p.left {
 }
 
 p.right {
-  left: 0;
   right: 0;
+  left: 0;
 
   @media screen and (min-width: 1400px) {
-    left: unset;
     right: 1rem;
+    left: unset;
   }
 }
 
@@ -158,15 +163,15 @@ ul li {
 }
 
 .wrapper {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  max-width: 2000px;
-  margin: 0 auto;
-  height: 100vh;
   position: relative;
-  padding: 2rem;
   z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  max-width: 2000px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 2rem;
 
   @media screen and (min-width: 1760px) {
     padding: 0 16rem;
@@ -177,12 +182,12 @@ ul li {
   }
 
   .content {
-    margin-right: 0;
     width: 100%;
+    margin-right: 0;
 
     @media screen and (min-width: 1335px) {
-      margin-right: 1rem;
       width: auto;
+      margin-right: 1rem;
     }
 
     @media screen and (min-width: 1400px) {
@@ -203,10 +208,10 @@ ul li {
   }
 
   img {
-    width: 150px;
-    border-radius: 100%;
-    border: 5px solid #3e9e91;
     z-index: -1;
+    width: 150px;
+    border: 5px solid #3e9e91;
+    border-radius: 100%;
 
     @media screen and (min-width: 812px) {
       width: 100px;
@@ -217,16 +222,16 @@ ul li {
     }
 
     @media screen and (min-width: 1336px) {
+      font-size: 8rem;
       position: absolute;
-      width: 100%;
       top: 5px;
-      -webkit-transform-style: preserve-3d;
+      left: 3rem;
+      display: block;
+      width: 100%;
+      max-width: 600px;
       border: none;
       border-radius: unset;
-      display: block;
-      font-size: 8rem;
-      max-width: 600px;
-      left: 3rem;
+      -webkit-transform-style: preserve-3d;
     }
 
     @media screen and (min-width: 1400px) {
