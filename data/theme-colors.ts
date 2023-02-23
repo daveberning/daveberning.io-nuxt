@@ -44,11 +44,6 @@ const bengalsTheme: Theme = {
 
 export const listOfThemes: ThemeSwatch[] = [ // Order of swatches
   {
-    name: 'bengals',
-    color: bengalsTheme.background,
-    image: 'bengals-logo.svg',
-  },
-  {
     name: 'default',
     color: defaultTheme.background
   },

@@ -14,7 +14,7 @@ export const about: About = {
   city: 'Cincinnati',
   state: 'Ohio',
   almaMaterLogo: `/images/university-of-cincinnati-vector-logo.svg`,
-  companyLogo: `/images/enodo-logo.svg`,
+  companyLogo: `/images/wd-logo-white.svg`,
   twitterHandle: `@daveberning`,
   bio: `<p>Hi, I'm Dave Berning, a web developer and author from Cincinnati. Yeah, <em>the</em> Queen City, where we smother spaghetti with chili and say things like "ope" and "I'm gonna squeeze right by ya." Anyway...</p>
 

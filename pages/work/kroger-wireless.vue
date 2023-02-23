@@ -1,7 +1,6 @@
 <template>
   <modal-content :is-inverted="true">
-    <work-content title="Kroger Wireless" url="https://apps.apple.com/us/app/kroger-wireless-my-account/id1499394715"
-                  url-text="View in App Store">
+    <work-content title="Kroger Wireless" url="https://apps.apple.com/us/app/kroger-wireless-my-account/id1499394715" url-text="View in App Store">
       <template slot="default">
         <img class="img-responsive" src="~/assets/images/kroger-wireless.png"
              alt="Various screens of the Kroger Wireless App">
@@ -76,7 +75,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-/deep/ img {
+::v-deep img {
   max-width: 30rem;
 }
 </style>

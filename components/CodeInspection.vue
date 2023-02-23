@@ -18,7 +18,6 @@
   import Vue from 'vue'
   import * as bowser from "bowser"
   import { getThemeColors } from '@/data/theme-colors'
-  import {VueInstance} from '~/types'
 
   export default Vue.extend({
     methods: {
