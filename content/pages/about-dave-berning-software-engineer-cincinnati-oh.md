@@ -2,6 +2,7 @@
 title: About | Dave Berning | Software Engineer | Cincinnati, OH
 date: 2023-02-23T22:55:19.985Z
 description: Test
+slug: test
 ---
 Hi, I'm Dave Berning, a web developer and author from Cincinnati. Yeah, *the* Queen City, where we smother spaghetti with chili and say things like "ope" and "I'm gonna squeeze right by ya." Anyway...
 
