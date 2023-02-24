@@ -2,12 +2,8 @@
   <theme-text>
     <div class="is-grid work">
       <theme-text tag="h1" class="is-col-7-md is-col-8-xl">{{ title }}</theme-text>
-      <div class="is-col-5-md is-col-4-xl link has-no-m">
-        <a
-          :href="url"
-          target="_blank"
-          :style="`${$store.getters.darkTextColor}; ${$store.getters.darkBorder}`"
-        >
+      <div class="is-col-5-md is-col-4-xl link has-no-m" v-if="url">
+        <a :href="url" target="_blank" :style="`${$store.getters.darkTextColor}; ${$store.getters.darkBorder}`">
           {{ urlText }}
         </a>
       </div>
