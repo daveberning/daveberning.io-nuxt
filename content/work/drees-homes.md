@@ -1,6 +1,7 @@
 ---
 title: Drees Homes
 date: 2023-03-03T21:23:24.154Z
+slug: drees-homes
 logo: /images/uploads/drees-logo.svg
 image: /images/uploads/drees-homes.png
 projectDescription: >-
