@@ -8,11 +8,11 @@ function years(): string {
 }
 
 export const about: About = {
-  firstName: 'Dave',
+  firstName: 'David',
   lastName: 'Berning',
-  role: 'Software Engineer & Author',
+  role: 'Software Engineer & Professor',
   city: 'Cincinnati',
-  state: 'Ohio',
+  state: 'OH',
   almaMaterLogo: `/images/university-of-cincinnati-vector-logo.svg`,
   companyLogo: `/images/wd-logo-white.svg`,
   twitterHandle: `@daveberning`,
@@ -22,7 +22,5 @@ export const about: About = {
 
 <p>When I'm not coding, I try to give back to the community where I can. Recently, it's through writing tutorials at <a href="https://www.digitalocean.com/community/users/daveberning">Digital Ocean</a> and speaking as the founder/co-organizer at the <a href="https://www.meetup.com/CodePen-Cincinnati/">CodePen Cincinnati meetups</a>.
 
- In 2018 I became a published author with <em><a href="https://www.amazon.com/Vue-Js-Understanding-Its-Tools-Ecosystem/dp/9388425022">Vue.js: Understanding It's Tools and Ecosystem</a></em> (author) and <em><a href="https://www.amazon.com/Creating-Interfaces-Bulma-Jeremy-Thomas-ebook/dp/B079M1BJG4/ref=sr_1_1?keywords=creating+interfaces+with+bulma&qid=1566873504&s=books&sr=1-1">Creating Interfaces With Bulma</a></em> (co-author, co-editor). Go and tell your mom to buy my books, that's how I make money.</p>
-
-<p>You can find me almost anywhere on the World Wide Web as <a href="https://twitter.com/daveberning">@daveberning</a>.</p>`
+ In 2018 I became a published author with <em><a href="https://www.amazon.com/Vue-Js-Understanding-Its-Tools-Ecosystem/dp/9388425022">Vue.js: Understanding It's Tools and Ecosystem</a></em> (author) and <em><a href="https://www.amazon.com/Creating-Interfaces-Bulma-Jeremy-Thomas-ebook/dp/B079M1BJG4/ref=sr_1_1?keywords=creating+interfaces+with+bulma&qid=1566873504&s=books&sr=1-1">Creating Interfaces With Bulma</a></em> (co-author, co-editor). Go and tell your mom to buy my books, that's how I make money.</p>`
 }

@@ -5,7 +5,7 @@
         <picture>
           <source
             ref="image"
-            :srcset="`images/compressed/dave-optimized-sm-${$store.state.theme}.jpg`"
+            :srcset="`images/portraits/dave-${$store.state.theme}.png`"
             media="(min-width: 1335px)">
           <img alt="PP" src="images/dave-mobile.jpg">
         </picture>
