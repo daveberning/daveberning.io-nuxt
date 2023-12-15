@@ -2,11 +2,6 @@ import { Work } from '@/types'
 
 export const works: Work[] = [
   {
-    name: `Narrative Editor`,
-    icon: `/images/wd-logo-white.svg`,
-    link: `/work/narrative-editor`
-  },
-  {
     name: `CTI`,
     icon: `/images/cti-logo.svg`,
     link: `/work/cti`
